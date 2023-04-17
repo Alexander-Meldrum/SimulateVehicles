@@ -1,0 +1,31 @@
+<! -- keep this header static -->
+<table id="myTable">
+	<thead>
+		<th col-index = 1>Tool</th>
+		<th col-index = 2>Feature<br>
+			<select class="table-filter" onchange="filterTable()">
+				<option value="all">All</option>
+				<option value="MBS">MBS</option>
+				<option value="Dynamics">Dynamics</option>
+			</select>
+		</th>
+
+		<th col-index = 3>OS / Library / Framework<br>
+			<select class="table-filter" onchange="filterTable()">
+				<option value="all">All</option>
+				<option value="Windows">Windows</option>
+				<option value="Linux">Linux</option>
+				<option value="Library">Library</option>
+				<option value="Framework">Framework</option>
+			</select>
+		</th>
+		<th col-index = 4>Open Source<br>
+			<select class="table-filter" onchange="filterTable()">
+				<option value="all">All</option>
+				<option value="Yes">Yes</option>
+				<option value="No">No</option>
+			</select>
+		</th>
+		<th col-index = 5>Description</th>
+		<th col-index = 6>Link</th>
+	</thead>

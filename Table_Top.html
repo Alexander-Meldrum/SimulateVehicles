@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Filterable Table</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	<style>
+        table {
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+            overflow-x: scroll;
+            white-space: normal;
+            font-size:80%;
+            /* max-width: fit-content; */
+        }
+
+        th {
+			background-color: #F7FFC4;
+		}
+
+		th, td {
+			text-align: left;
+			padding: 8px;
+			border: 1px solid #ddd;
+		}
+
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+	</style>
+</head>
+<body>
+    <!-- <input type="text" id="mySearchInput" onkeyup="myFunction()" placeholder="Search" title="Search">
+    <br> -->
+
+	<script>
+		function filterTable() {
+			var tr, td, i, j;
+			
+            input_array = document.getElementsByTagName("select");
+
+            let filter_array = new Array(input_array.length);
+            let regex_array = new Array(input_array.length);   
+            
+            for (j = 0; j < input_array.length; j++) {
+                filter_array[j] = input_array[j].value.toUpperCase();
+                regex_array[j] = new RegExp(filter_array[j]);
+                }
+			
+
+			table = document.getElementById("myTable");
+			tr = table.getElementsByTagName("tr");
+            // console.log(tr);
+            // console.log(filter_array);
+            // console.log(regex_array);
+            let txtValues = new Array(input_array.length);
+            
+			for (i = 1; i < tr.length; i++) {
+
+                // Show row as default
+                tr[i].style.display = "";
+                // Start loop after header, second row
+                for (j = 0; j < input_array.length; j++) {
+                    // console.log(i);
+                    // console.log(j);
+                    // j+1 for adjustimg to first selector column nr
+                    td = tr[i].getElementsByTagName("td")[j+1];
+                    if (td) {
+                        txtValues[j] = td.textContent || td.innerText;
+                        txtValues[j] = txtValues[j].toUpperCase()
+                        
+                    }
+                    // console.log(filter_array[j]);
+                    // console.log(txtValues[j]);
+                    // console.log(regex_array[j]);
+                    // console.log(regex_array[j].test(txtValues[j]));
+                    // console.log(!(regex_array[j].test(txtValues[j])));
+                    // if not ALL nor regex catch, then hide row
+                    if (filter_array[j] != 'ALL' ){
+                        if (!(regex_array[j].test(txtValues[j]))){
+                            tr[i].style.display = "none";
+                            break;
+                        }
+                        
+                         
+                    }
+                }
+                // console.log(txtValues);
+                
+			}
+		}
+    </script>
+</body>
