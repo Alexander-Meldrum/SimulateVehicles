@@ -1,20 +1,31 @@
 import pandas as pd
+import numpy as np
 # Convert csv table to html table body and combine the html files.
 df = pd.read_csv('Automotive.csv')
 #print("The csv data is:")
 #print(df)
-# Replace https links with hmtml anchors <a>
-for index, row in df.iterrows():
-    #print(row['Tool'], row['Link'])
-    print(row['Link'])
-    if row['Link'] is None:
-        print("hej2")
+# Replace Tool name with html anchors <a> if link defined
+df['Tool'] = np.where(df['Link'].isna(), df['Tool'], '<a href="' + df['Link'] + '"' + ' target="_blank">'+ df['Tool']+ '</a>')
+print(df)
 
-
+#TODO remove link column
 html_string = df.to_html(header=False, index=False, na_rep="")
 #print("The html string is:")
 #print(html_string)
 
-text_file = open("Generated_table_body.html", "w")
+text_file = open("generated_table_body.html", "w")
 text_file.write(html_string)
 text_file.close()
+
+#Remove first row from Generated_table_body
+with open('generated_table_body.html', 'r') as fin:
+    data = fin.read().splitlines(True)
+with open('generated_table_body_modified.html', 'w') as fout:
+    fout.writelines(data[1:])
+
+# Combine Files
+filenames = ['Table_Top.html','Table_Header.html','generated_table_body_modified.html','Table_Bottom.html']
+with open('generated_full.html', 'w') as outfile:
+    for fname in filenames:
+        with open(fname) as infile:
+            outfile.write(infile.read())
