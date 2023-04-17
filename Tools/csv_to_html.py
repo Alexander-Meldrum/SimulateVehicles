@@ -15,6 +15,6 @@ html_string = df.to_html(header=False, index=False, na_rep="")
 #print("The html string is:")
 #print(html_string)
 
-text_file = open("Generated.html", "w")
+text_file = open("Generated_table_body.html", "w")
 text_file.write(html_string)
 text_file.close()
