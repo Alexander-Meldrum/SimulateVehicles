@@ -1,9 +1,9 @@
-Tool,Features,OS/Library/Framework,Open Source,Description,Link
-ATOS,,,,,https://hexagon.com/products/product-groups/computer-aided-engineering-software/adams
+Tool,Features,OS/Framework,Open Source,Description,Link
+ATOS,,,,,
 ABAQUS,,,,,
 Actran,,,,,
 AcuSolve,,,,,
-Adams,,,,,
+Adams,,,,,https://hexagon.com/products/product-groups/computer-aided-engineering-software/adams
 Adams Car,,,,,
 Altair Activate,,,,,
 Altair Flux,,,,,

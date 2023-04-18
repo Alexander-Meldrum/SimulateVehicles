@@ -1,8 +1,8 @@
 <! -- keep this header static -->
 <table id="myTable">
 	<thead>
-		<th col-index = 1>Tool</th>
-		<th col-index = 2>Feature<br>
+		<th col-index = 1 valign="top">Tool</th>
+		<th col-index = 2 valign="top">Feature<br>
 			<select class="table-filter" onchange="filterTable()">
 				<option value="all">All</option>
 				<option value="MBS">MBS</option>
@@ -10,7 +10,7 @@
 			</select>
 		</th>
 
-		<th col-index = 3>OS / Library / Framework<br>
+		<th col-index = 3 valign="top">OS / Framework<br>
 			<select class="table-filter" onchange="filterTable()">
 				<option value="all">All</option>
 				<option value="Windows">Windows</option>
@@ -19,13 +19,13 @@
 				<option value="Framework">Framework</option>
 			</select>
 		</th>
-		<th col-index = 4>Open Source<br>
+		<th style="width: 30%;" col-index = 4 valign="top">Open-Source<br>
 			<select class="table-filter" onchange="filterTable()">
 				<option value="all">All</option>
 				<option value="Yes">Yes</option>
 				<option value="No">No</option>
 			</select>
 		</th>
-		<th col-index = 5>Description</th>
-		<th col-index = 6>Link</th>
+		<th col-index = 5 valign="top">Description</th>
 	</thead>
+	
