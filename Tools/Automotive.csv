@@ -1,6 +1,6 @@
 Tool,Features,OS/Framework,Open Source,Description,Link
-ATOS,,,,,
-ABAQUS,,,,,
+ATOS,"Dynamics, Animation",Windows,Yes,,
+ABAQUS,Dynamics,Linux,No,,
 Actran,,,,,
 AcuSolve,,,,,
 Adams,,,,,https://hexagon.com/products/product-groups/computer-aided-engineering-software/adams
@@ -39,7 +39,8 @@ AVL VSM,,,,,
 AVL X-ion,,,,,
 AVL Zink,,,,,
 CAESES,,,,,
-CarMaker,,,,"Open integration and test platform for virtual test driving
+CarMaker,,,,"Open integration and test platform for virtual test driving.
+
 CarMaker itself is an advanced software package for Model-Based Design, testing, and development in the field of vehicle dynamics for cars, motorcycles and trucks.",https://ipg-automotive.com/en
 CarMaker Realtime,,,,,
 CARNET,,,,,

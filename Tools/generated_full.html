@@ -28,86 +28,168 @@
 		}
 
         body {
-            margin: 50px;
+            margin: 0px;
             padding: 0;
+        }
+
+        /* p {
+            margin: 10px;
+            padding: 0;
+        } */
+
+        .small_header_column {
+            /* TODO does not work */
+            width: 10%;
         }
 
 	</style>
 </head>
 <body>
-    <!-- <input type="text" id="mySearchInput" onkeyup="myFunction()" placeholder="Search" title="Search">
-    <br> -->
+    <input type="text" id="mySearchInput1" onkeyup="filterTable()" placeholder="Search" title="Search">
+    <br>
 
 	<script>
 		function filterTable() {
-			var tr, td, i, j;
-			
-            input_array = document.getElementsByTagName("select");
+			var tr, td, i, j, s, break_feature_loop;
+			var nr_of_selects_in_features = 3;
+            var nr_of_table_columns = 5;
 
-            let filter_array = new Array(input_array.length);
-            let regex_array = new Array(input_array.length);   
+            select_input_array = document.getElementsByTagName("select");
+            let search_input_array = new Array(document.getElementById("mySearchInput1"));
+
+            let select_array = new Array(select_input_array.length);
+            let select_regex_array = new Array(select_input_array.length);
+            let search_array = new Array(search_input_array.length);
+            let search_regex_array = new Array(search_input_array.length); 
             
-            for (j = 0; j < input_array.length; j++) {
-                filter_array[j] = input_array[j].value.toUpperCase();
-                regex_array[j] = new RegExp(filter_array[j]);
-                }
-			
+            for (j = 0; j < select_input_array.length; j++) {
+                select_array[j] = select_input_array[j].value.toUpperCase();
+                select_regex_array[j] = new RegExp(select_array[j]);
+            }
+            for (j = 0; j < search_input_array.length; j++) {
+                search_array[j] = search_input_array[j].value.toUpperCase();
+                search_regex_array[j] = new RegExp(search_array[j]);
+            }
+
+            // console.log("search_regex_array");
+            // console.log(search_regex_array);
+            // console.log(search_array);
+            // console.log(search_input_array.length);
 
 			table = document.getElementById("myTable");
 			tr = table.getElementsByTagName("tr");
             // console.log(tr);
-            // console.log(filter_array);
-            // console.log(regex_array);
-            let txtValues = new Array(input_array.length);
-            
+            // console.log(select_array);
+            // console.log(select_regex_array);
+
+            // txtValue are actual values in table
+            let txtValues = new Array(nr_of_table_columns);
+            console.log("Debug1");
+            // Start loop after header, second row. i = row, j = column
 			for (i = 1; i < tr.length; i++) {
 
                 // Show row as default
                 tr[i].style.display = "";
-                // Start loop after header, second row
-                for (j = 0; j < input_array.length; j++) {
+                console.log("Debug2");
+                // Loop through each column
+                for (j = 0; j < nr_of_table_columns; j++) {
                     // console.log(i);
                     // console.log(j);
-                    // j+1 for adjustimg to first selector column nr
-                    td = tr[i].getElementsByTagName("td")[j+1];
+                    console.log("j:" + j);
+                    console.log("Debug3");
+                    td = tr[i].getElementsByTagName("td")[j];
                     if (td) {
                         txtValues[j] = td.textContent || td.innerText;
                         txtValues[j] = txtValues[j].toUpperCase()
-                        
                     }
-                    // console.log(filter_array[j]);
+                    
+                    // console.log(select_array[j]);
                     // console.log(txtValues[j]);
-                    // console.log(regex_array[j]);
-                    // console.log(regex_array[j].test(txtValues[j]));
-                    // console.log(!(regex_array[j].test(txtValues[j])));
-                    // if not ALL nor regex catch, then hide row
-                    if (filter_array[j] != 'ALL' ){
-                        if (!(regex_array[j].test(txtValues[j]))){
-                            tr[i].style.display = "none";
-                            break;
+                    // console.log(select_regex_array[j]);
+                    // console.log(select_regex_array[j].test(txtValues[j]));
+                    // console.log(!(select_regex_array[j].test(txtValues[j])));
+                    
+                    // if there is selector in column
+                    console.log("Debug4");
+                    if (j==1){
+                        console.log("Debug5");
+                        // Loop over nr_of_selects_in_features
+                        for (s = 0; s < nr_of_selects_in_features; s++) {
+                            console.log("Debug5.1 s:" +s);
+                            // if not ALL nor regex catch, then hide row
+                            if (select_array[s] != 'ALL' ){
+                                console.log("Debug5.2");
+                                if (!(select_regex_array[s].test(txtValues[j]))){
+                                    console.log("Debug5.3");
+                                    tr[i].style.display = "none";
+                                    break_feature_loop = true; 
+                                    break;
+                                }
+                            }
                         }
+                        if (break_feature_loop){
+                                break
+                            }
                         
-                         
                     }
+                    else if (j == 2 || j == 3){
+                        console.log("Debug6");
+                        console.log("select_array[j + nr_of_selects_in_features - 2");
+                        console.log(select_array[j + nr_of_selects_in_features - 2]);
+                        if (select_array[j + nr_of_selects_in_features - 2] != 'ALL' ){
+                            // Assumes Select in third & fourth colmun
+                            if (!(select_regex_array[j + nr_of_selects_in_features - 2].test(txtValues[j]))){
+                                tr[i].style.display = "none";
+                                break;
+                            }
+                        }
+                    }  
                 }
                 // console.log(txtValues);
-                
-			}
-		}
+                // console.log("search_regex_array[0].test(txtValues)");
+                // console.log(search_regex_array[0].test(txtValues));
+
+                // Hide row if search key & it cannot be found in row
+                // Assume only 1 search field
+                console.log("Debug7");
+                if (search_array[0] != ''){
+                    console.log("Debug8");
+                    if (!(search_regex_array[0].test(txtValues))){
+                        tr[i].style.display = "none";
+                    }  
+                }
+		    }
+        }
     </script>
+
 <! -- keep this header static -->
 <table id="myTable">
 	<thead>
 		<th col-index = 1 valign="top">Tool</th>
-		<th col-index = 2 valign="top">Feature<br>
+		<th class="small_header_column" col-index = 2 valign="top">Feature<br>
 			<select class="table-filter" onchange="filterTable()">
-				<option value="all">All</option>
+				<option value="all">Feature1</option>
 				<option value="MBS">MBS</option>
 				<option value="Dynamics">Dynamics</option>
+				<option value="Animation">Animation</option>
+			</select>
+			<br>
+			<select class="table-filter" onchange="filterTable()">
+				<option value="all">Feature2</option>
+				<option value="MBS">MBS</option>
+				<option value="Dynamics">Dynamics</option>
+				<option value="Animation">Animation</option>
+			</select>
+			<br>
+			<select class="table-filter" onchange="filterTable()">
+				<option value="all">Feature3</option>
+				<option value="MBS">MBS</option>
+				<option value="Dynamics">Dynamics</option>
+				<option value="Animation">Animation</option>
 			</select>
 		</th>
 
-		<th col-index = 3 valign="top">OS / Framework<br>
+		<th class="small_header_column" col-index = 3 valign="top">OS / Framework<br>
 			<select class="table-filter" onchange="filterTable()">
 				<option value="all">All</option>
 				<option value="Windows">Windows</option>
@@ -116,7 +198,7 @@
 				<option value="Framework">Framework</option>
 			</select>
 		</th>
-		<th style="width: 30%;" col-index = 4 valign="top">Open-Source<br>
+		<th class="small_header_column" col-index = 4 valign="top">Open-Source<br>
 			<select class="table-filter" onchange="filterTable()">
 				<option value="all">All</option>
 				<option value="Yes">Yes</option>
@@ -125,19 +207,19 @@
 		</th>
 		<th col-index = 5 valign="top">Description</th>
 	</thead>
-	  <tbody>
+  <tbody>
     <tr>
       <td>ATOS</td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>Dynamics, Animation</td>
+      <td>Windows</td>
+      <td>Yes</td>
       <td></td>
     </tr>
     <tr>
       <td>ABAQUS</td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>Dynamics</td>
+      <td>Linux</td>
+      <td>No</td>
       <td></td>
     </tr>
     <tr>
@@ -411,7 +493,7 @@
       <td></td>
       <td></td>
       <td></td>
-      <td>Open integration and test platform for virtual test driving\nCarMaker itself is an advanced software package for Model-Based Design, testing, and development in the field of vehicle dynamics for cars, motorcycles and trucks.</td>
+      <td>Open integration and test platform for virtual test driving.<br><br>CarMaker itself is an advanced software package for Model-Based Design, testing, and development in the field of vehicle dynamics for cars, motorcycles and trucks.</td>
     </tr>
     <tr>
       <td>CarMaker Realtime</td>
