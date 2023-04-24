@@ -4,12 +4,17 @@
 	<title>Automotive Simulation Tool Table</title>
 	<style>
         table {
-            width: 100%;
+            /* width: 100%; */
+            width: min(100%,1080px);
+            /* width: 2500px; */
             display: block;
-            margin: 0 auto;
-            overflow-x: scroll;
+            table-layout: fixed;
             white-space: normal;
-            font-size:90%;
+            font-size: 90%;
+
+            margin: 0 auto;
+            /* overflow: auto; */
+            overflow-x: auto;
             /* max-width: fit-content; */
         }
 
@@ -27,19 +32,27 @@
 			background-color: #f2f2f2;
 		}
 
+        /* Set column widths */
+        table tr th:nth-child(1) {
+			width: 15%;
+		}
+        table tr th:nth-child(2) {
+			width: 20%;
+		}
+        table tr th:nth-child(3) {
+			width: 10%;
+		}
+        table tr th:nth-child(4) {
+			width: 10%;
+		}
+        table tr th:nth-child(5) {
+			width: 45%;
+		}
+
+
         body {
             margin: 0px;
             padding: 0;
-        }
-
-        /* p {
-            margin: 10px;
-            padding: 0;
-        } */
-
-        .small_header_column {
-            /* TODO does not work */
-            width: 10%;
         }
 
 	</style>
@@ -52,7 +65,9 @@
 		function filterTable() {
 			var tr, td, i, j, s, break_feature_loop;
 			var nr_of_selects_in_features = 3;
+            var features_column_nr = 2;
             var nr_of_table_columns = 5;
+            
 
             select_input_array = document.getElementsByTagName("select");
             let search_input_array = new Array(document.getElementById("mySearchInput1"));
@@ -84,19 +99,19 @@
 
             // txtValue are actual values in table
             let txtValues = new Array(nr_of_table_columns);
-            console.log("Debug1");
+            // console.log("Debug1");
             // Start loop after header, second row. i = row, j = column
 			for (i = 1; i < tr.length; i++) {
 
                 // Show row as default
                 tr[i].style.display = "";
-                console.log("Debug2");
+                // console.log("Debug2");
                 // Loop through each column
                 for (j = 0; j < nr_of_table_columns; j++) {
                     // console.log(i);
                     // console.log(j);
-                    console.log("j:" + j);
-                    console.log("Debug3");
+                    // console.log("j:" + j);
+                    // console.log("Debug3");
                     td = tr[i].getElementsByTagName("td")[j];
                     if (td) {
                         txtValues[j] = td.textContent || td.innerText;
@@ -110,17 +125,17 @@
                     // console.log(!(select_regex_array[j].test(txtValues[j])));
                     
                     // if there is selector in column
-                    console.log("Debug4");
+                    // console.log("Debug4");
                     if (j==1){
-                        console.log("Debug5");
+                        // console.log("Debug5");
                         // Loop over nr_of_selects_in_features
                         for (s = 0; s < nr_of_selects_in_features; s++) {
-                            console.log("Debug5.1 s:" +s);
+                            // console.log("Debug5.1 s:" +s);
                             // if not ALL nor regex catch, then hide row
                             if (select_array[s] != 'ALL' ){
-                                console.log("Debug5.2");
+                                // console.log("Debug5.2");
                                 if (!(select_regex_array[s].test(txtValues[j]))){
-                                    console.log("Debug5.3");
+                                    // console.log("Debug5.3");
                                     tr[i].style.display = "none";
                                     break_feature_loop = true; 
                                     break;
@@ -133,10 +148,10 @@
                         
                     }
                     else if (j == 2 || j == 3){
-                        console.log("Debug6");
-                        console.log("select_array[j + nr_of_selects_in_features - 2");
-                        console.log(select_array[j + nr_of_selects_in_features - 2]);
-                        if (select_array[j + nr_of_selects_in_features - 2] != 'ALL' ){
+                        // console.log("Debug6");
+                        // console.log("select_array[j + nr_of_selects_in_features - 2");
+                        // console.log(select_array[j + nr_of_selects_in_features - features_column_nr]);
+                        if (select_array[j + nr_of_selects_in_features - features_column_nr] != 'ALL' ){
                             // Assumes Select in third & fourth colmun
                             if (!(select_regex_array[j + nr_of_selects_in_features - 2].test(txtValues[j]))){
                                 tr[i].style.display = "none";
@@ -151,9 +166,9 @@
 
                 // Hide row if search key & it cannot be found in row
                 // Assume only 1 search field
-                console.log("Debug7");
+                // console.log("Debug7");
                 if (search_array[0] != ''){
-                    console.log("Debug8");
+                    // console.log("Debug8");
                     if (!(search_regex_array[0].test(txtValues))){
                         tr[i].style.display = "none";
                     }  
@@ -165,8 +180,8 @@
 <! -- keep this header static -->
 <table id="myTable">
 	<thead>
-		<th col-index = 1 valign="top">Tool</th>
-		<th class="small_header_column" col-index = 2 valign="top">Feature<br>
+		<th valign="top">Tool</th>
+		<th valign="top">Feature<br>
 			<select class="table-filter" onchange="filterTable()">
 				<option value="all">Feature1</option>
 				<option value="MBS">MBS</option>
@@ -189,7 +204,7 @@
 			</select>
 		</th>
 
-		<th class="small_header_column" col-index = 3 valign="top">OS / Framework<br>
+		<th valign="top">OS / Framework<br>
 			<select class="table-filter" onchange="filterTable()">
 				<option value="all">All</option>
 				<option value="Windows">Windows</option>
@@ -198,14 +213,14 @@
 				<option value="Framework">Framework</option>
 			</select>
 		</th>
-		<th class="small_header_column" col-index = 4 valign="top">Open-Source<br>
+		<th valign="top">Open-Source<br>
 			<select class="table-filter" onchange="filterTable()">
 				<option value="all">All</option>
 				<option value="Yes">Yes</option>
 				<option value="No">No</option>
 			</select>
 		</th>
-		<th col-index = 5 valign="top">Description</th>
+		<th valign="top">Description</th>
 	</thead>
   <tbody>
     <tr>
@@ -213,7 +228,7 @@
       <td>Dynamics, Animation</td>
       <td>Windows</td>
       <td>Yes</td>
-      <td></td>
+      <td>Open integration and test platform for virtual test driving. TEST itself is an advanced software package for Model-Based Design, testing, and development in the field of vehicle dynamics for cars, motorcycles and trucks.TEST TEST</td>
     </tr>
     <tr>
       <td>ABAQUS</td>
