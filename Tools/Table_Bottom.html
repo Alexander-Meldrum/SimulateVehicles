@@ -1,2 +1,13 @@
+
+
+<script>
+// Make all cells collapsible
+const tds = document.querySelectorAll('td div');
+tds.forEach(td => {
+td.addEventListener('click', () => {
+    td.classList.toggle('expand_cell')
+})
+})
+    </script>
 </body>
 </html>

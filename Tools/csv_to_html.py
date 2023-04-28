@@ -19,6 +19,10 @@ html_string = html_string.replace('\\n','<br>')
 #print("The html string is:")
 #print(html_string)
 
+#Add <div> for collapsible rows
+html_string = html_string.replace('<td>','<td><div>')
+html_string = html_string.replace('</td>','</div></td>')
+
 text_file = open("generated_table_body.html", "w")
 text_file.write(html_string)
 text_file.close()
@@ -35,3 +39,12 @@ with open('generated_full.html', 'w') as outfile:
     for fname in filenames:
         with open(fname) as infile:
             outfile.write(infile.read())
+
+# Copy contents to clipboard (Windows)
+import os
+with open('generated_full.html', 'r') as file:
+    data = file.read()
+import pyperclip # python -m pip install pyperclip 
+pyperclip.copy(data)
+
+print('generated_full.html contents copied to clipbord')

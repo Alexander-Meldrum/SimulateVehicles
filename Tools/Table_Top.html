@@ -4,55 +4,96 @@
 	<title>Automotive Simulation Tool Table</title>
 	<style>
         table {
-            /* width: 100%; */
-            width: min(100%,1080px);
+            /* width: 1000px; */
+            /* width: min(100%,1080px); */
             /* width: 2500px; */
-            display: block;
             table-layout: fixed;
-            white-space: normal;
+            /* width: calc(100%); */
+            border-collapse: collapse;
+            display: block;
+            
+            /* white-space: normal; */
             font-size: 90%;
 
-            margin: 0 auto;
-            /* overflow: auto; */
-            overflow-x: auto;
-            /* max-width: fit-content; */
+            /* margin: 0 auto; */
+            overflow-x: scroll;
+            /* overflow-x: hidden; */
+            /* max-width: 100%; */
+
         }
 
         th {
 			background-color: #F7FFC4;
+            padding: 2px;
 		}
 
 		th, td {
+            vertical-align: top;
 			text-align: left;
-			padding: 2px;
 			border: 1px solid #ddd;
+            /* white-space: nowrap;  */
+            /* width: 200px;        */
+            /* overflow: hidden; */
+            /* overflow: hidden; */
+            /* white-space: nowrap;  */
+            /* text-overflow: ellipsis; */
+            /* width: 3em;
+            max-width: 3em; */
+		}
+
+        td {
+            padding: 0px;
+        }
+        td div {
+            /* Text in cells are wrapped in div for collapsiblity */
+            padding: 2px;
+            overflow: hidden;
+            white-space: nowrap; 
+            text-overflow: ellipsis;
+        }
+        th:nth-child(1), td:nth-child(1) {
+            width: 14em;
+            max-width: 14em;
+		}
+        th:nth-child(2), td:nth-child(2) {
+            width: 30em;
+            max-width: 30em;
+		}
+        th:nth-child(3), td:nth-child(3) {
+            width: 8em;
+            max-width: 8em;
+		}
+        th:nth-child(4), td:nth-child(4) {
+            width: 8em;
+            max-width: 8em;
+		}
+        th:nth-child(5), td:nth-child(5) {
+            width: 30em;
+            max-width: 30em;
 		}
 
 		tr:nth-child(even) {
 			background-color: #f2f2f2;
 		}
 
-        /* Set column widths */
-        table tr th:nth-child(1) {
-			width: 15%;
-		}
-        table tr th:nth-child(2) {
-			width: 20%;
-		}
-        table tr th:nth-child(3) {
-			width: 10%;
-		}
-        table tr th:nth-child(4) {
-			width: 10%;
-		}
-        table tr th:nth-child(5) {
-			width: 45%;
+        select {
+			background-color: #F7FFC4;
+            padding: 2px;
+            margin: 0px;
+            /* font-size: 90%; */
 		}
 
 
         body {
             margin: 0px;
             padding: 0;
+        }
+        
+        .expand_cell {
+        overflow: auto;
+        white-space: normal; 
+        text-overflow: ellipsis;
+        background-color: #ffffe1;
         }
 
 	</style>
@@ -62,6 +103,7 @@
     <br>
 
 	<script>
+        
 		function filterTable() {
 			var tr, td, i, j, s, break_feature_loop;
 			var nr_of_selects_in_features = 3;
