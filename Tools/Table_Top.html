@@ -51,25 +51,40 @@
             white-space: nowrap; 
             text-overflow: ellipsis;
         }
+        td div:hover { 
+            background-color: #ffffe1;
+            white-space: normal;
+        }
+
         th:nth-child(1), td:nth-child(1) {
             width: 14em;
+            min-width: 14em;
             max-width: 14em;
 		}
         th:nth-child(2), td:nth-child(2) {
             width: 30em;
+            min-width: 30em;
             max-width: 30em;
 		}
         th:nth-child(3), td:nth-child(3) {
             width: 8em;
+            min-width: 8em;
             max-width: 8em;
 		}
         th:nth-child(4), td:nth-child(4) {
             width: 8em;
+            min-width: 8em;
             max-width: 8em;
 		}
         th:nth-child(5), td:nth-child(5) {
-            width: 30em;
-            max-width: 30em;
+            width: 8em;
+            min-width: 8em;
+            max-width: 8em;
+		}
+        th:nth-child(6), td:nth-child(6) {
+            width: 35em;
+            min-width: 35em;
+            max-width: 35em;
 		}
 
 		tr:nth-child(even) {
@@ -95,11 +110,12 @@
         text-overflow: ellipsis;
         background-color: #ffffe1;
         }
+        
 
 	</style>
 </head>
 <body>
-    <input type="text" id="mySearchInput1" onkeyup="filterTable()" placeholder="Search" title="Search">
+    <input type="text" id="mySearchInput1" onkeyup="filterTable()" placeholder="Search (combined with table filters)" title="Search">
     <br>
 
 	<script>
@@ -108,7 +124,7 @@
 			var tr, td, i, j, s, break_feature_loop;
 			var nr_of_selects_in_features = 3;
             var features_column_nr = 2;
-            var nr_of_table_columns = 5;
+            var nr_of_table_columns = 6;
             
 
             select_input_array = document.getElementsByTagName("select");

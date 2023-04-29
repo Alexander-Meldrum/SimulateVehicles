@@ -12,7 +12,7 @@ df = pd.read_csv('Automotive.csv')
 df['Tool'] = np.where(df['Link'].isna(), df['Tool'], '<a href="' + df['Link'] + '"' + ' target="_blank">'+ df['Tool']+ '</a>')
 #print(df)
 
-html_string = df.to_html(header=False, index=False, na_rep="", escape=False, columns=['Tool', 'Features','OS/Framework','Open Source', 'Description'])
+html_string = df.to_html(header=False, index=False, na_rep="", escape=False, columns=['Tool', 'Features','Game/Engineering','OS/Framework','Open Source', 'Description'])
 
 # replace new line with <br>
 html_string = html_string.replace('\\n','<br>')

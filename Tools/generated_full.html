@@ -51,25 +51,40 @@
             white-space: nowrap; 
             text-overflow: ellipsis;
         }
+        td div:hover { 
+            background-color: #ffffe1;
+            white-space: normal;
+        }
+
         th:nth-child(1), td:nth-child(1) {
             width: 14em;
+            min-width: 14em;
             max-width: 14em;
 		}
         th:nth-child(2), td:nth-child(2) {
             width: 30em;
+            min-width: 30em;
             max-width: 30em;
 		}
         th:nth-child(3), td:nth-child(3) {
             width: 8em;
+            min-width: 8em;
             max-width: 8em;
 		}
         th:nth-child(4), td:nth-child(4) {
             width: 8em;
+            min-width: 8em;
             max-width: 8em;
 		}
         th:nth-child(5), td:nth-child(5) {
-            width: 30em;
-            max-width: 30em;
+            width: 8em;
+            min-width: 8em;
+            max-width: 8em;
+		}
+        th:nth-child(6), td:nth-child(6) {
+            width: 35em;
+            min-width: 35em;
+            max-width: 35em;
 		}
 
 		tr:nth-child(even) {
@@ -95,11 +110,12 @@
         text-overflow: ellipsis;
         background-color: #ffffe1;
         }
+        
 
 	</style>
 </head>
 <body>
-    <input type="text" id="mySearchInput1" onkeyup="filterTable()" placeholder="Search" title="Search">
+    <input type="text" id="mySearchInput1" onkeyup="filterTable()" placeholder="Search (combined with table filters)" title="Search">
     <br>
 
 	<script>
@@ -108,7 +124,7 @@
 			var tr, td, i, j, s, break_feature_loop;
 			var nr_of_selects_in_features = 3;
             var features_column_nr = 2;
-            var nr_of_table_columns = 5;
+            var nr_of_table_columns = 6;
             
 
             select_input_array = document.getElementsByTagName("select");
@@ -230,19 +246,24 @@
 				<option value="Dynamics">Dynamics</option>
 				<option value="Animation">Animation</option>
 			</select>
-			<br>
 			<select class="table-filter" onchange="filterTable()">
 				<option value="all">Feature2</option>
 				<option value="MBS">MBS</option>
 				<option value="Dynamics">Dynamics</option>
 				<option value="Animation">Animation</option>
 			</select>
-			<br>
 			<select class="table-filter" onchange="filterTable()">
 				<option value="all">Feature3</option>
 				<option value="MBS">MBS</option>
 				<option value="Dynamics">Dynamics</option>
 				<option value="Animation">Animation</option>
+			</select>
+		</th>
+		<th>Game / Eng.<br>
+			<select class="table-filter" onchange="filterTable()">
+				<option value="All">All</option>
+				<option value="Game">Game</option>
+				<option value="Engineering">Eng.</option>
 			</select>
 		</th>
 
@@ -268,6 +289,7 @@
     <tr>
       <td><div>ATOS</div></td>
       <td><div>Dynamics, Animation, Dynamics, Animation, Dynamics, Animation, Dynamics, Animation, Dynamics, Animation, Dynamics, Animation, Dynamics, Animation, Dynamics, Animation</div></td>
+      <td><div>Engineering</div></td>
       <td><div>Windows</div></td>
       <td><div>Yes</div></td>
       <td><div>Open integration and test platform for virtual test driving. TEST itself is an advanced software package for Model-Based Design, testing, and development in the field of vehicle dynamics for cars, motorcycles and trucks.TEST TEST</div></td>
@@ -275,12 +297,14 @@
     <tr>
       <td><div>ABAQUS</div></td>
       <td><div>Dynamics</div></td>
+      <td><div>Game</div></td>
       <td><div>Linux</div></td>
       <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
       <td><div>Actran</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -292,9 +316,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div><a href="https://hexagon.com/products/product-groups/computer-aided-engineering-software/adams" target="_blank">Adams</a></div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -306,9 +332,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Altair Activate</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -320,9 +348,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Altair Inspire</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -334,9 +364,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>ANSA</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -348,9 +380,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>ANSYS Icepak</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -362,9 +396,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>ANSYS Mechanical</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -376,9 +412,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>ANSYS RedHawk</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -390,9 +428,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>ANSYS Structural</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -404,9 +444,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>AVL Boost</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -418,9 +460,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>AVL Cruise</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -432,9 +476,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>AVL eDICT</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -446,9 +492,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>AVL EXCITE Power Unit</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -460,9 +508,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>AVL FAME</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -474,9 +524,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>AVL Fire M</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -488,9 +540,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>AVL Fuel Cell</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -502,9 +556,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>AVL Powertrain Integration</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -516,9 +572,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>AVL VSM</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -530,9 +588,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>AVL Zink</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -544,9 +604,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div><a href="https://ipg-automotive.com/en" target="_blank">CarMaker/TruckMaker/BikeMaker</a></div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -558,9 +620,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>CARNET</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -572,9 +636,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>CarSim Research</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -586,9 +652,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>CarSim/TruckSim/BikeSim</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -600,9 +668,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>CFD software such as OpenFOAM and Fluent</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -614,9 +684,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>CFX</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -628,9 +700,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>CONVERGE CFD</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -642,9 +716,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Co-Simulation Framework (CSF)</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -656,9 +732,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Cradle CFD</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -670,9 +748,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>CV-Drive</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -684,9 +764,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Dassault Systemes SIMULIA</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -698,9 +780,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>DIMAI</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -712,9 +796,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Durability Solver</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -726,9 +812,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Dynamic Modeling</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -740,9 +828,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>EASY5/Engine</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -754,9 +844,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Engine Analyzer</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -768,9 +860,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>ANSYS</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -782,9 +876,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>FEMFAT</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -796,9 +892,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>FLOW-3D Cast</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -810,9 +908,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Fluent Adjoint Solver</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -824,9 +924,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Fluent Polyhedral Meshing</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -838,9 +940,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Functional Mock-up Interface (FMI)</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -852,9 +956,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Gearbox Design</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -866,9 +972,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Geomagic Design X</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -880,9 +988,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>GT-SUITE</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -894,9 +1004,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>HyperMesh</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -908,9 +1020,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>HyperWorks</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -922,9 +1036,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>IPG Virtual Vehicle</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -936,9 +1052,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>JMAG</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -950,9 +1068,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>KULI</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -964,9 +1084,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>LMS Imagine.Lab Motion</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -978,9 +1100,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>LMS Test.Lab</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -992,9 +1116,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>LMS Virtual.Lab Motion AVL</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1006,6 +1132,7 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>LMS Virtual.Lab Vehicle</div></td>
@@ -1013,9 +1140,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>LS-DYNA</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1027,9 +1156,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>LS-DYNA/S</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1041,9 +1172,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>MADYMO</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1055,9 +1188,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Magma Injection</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1069,9 +1204,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>MapleSim</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1083,9 +1220,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Matlab/Simulink</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1097,9 +1236,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Modelica</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1111,9 +1252,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Modelon Library Suite</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1125,9 +1268,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Modelon Vehicle Dynamics Library</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1139,9 +1284,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>MSC Adams</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1153,9 +1300,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>MSC Adams/Engine</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1167,9 +1316,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>MSC Easy5</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1181,9 +1332,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Multibody Dynamics Simulation (MBDS)</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1195,9 +1348,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Multi-Disciplinary Optimization (MDO)</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1209,9 +1364,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Multi-Physics Simulation (MPS)</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1223,9 +1380,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>nCode DesignLife</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1237,9 +1396,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>NUMECA</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1251,9 +1412,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>OpenFOAM+</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1265,9 +1428,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>OptimumG</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1279,9 +1444,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>PAM-CRASH</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1293,9 +1460,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Permas</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1307,9 +1476,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>PowerFLOW</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1321,9 +1492,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>rFpro</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1335,9 +1508,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Ricardo VECTIS</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1349,9 +1524,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Ricardo Wave6</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1363,9 +1540,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>RomaxDESIGNER</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1377,9 +1556,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Siemens PLM Simcenter Amesim</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1391,9 +1572,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Siemens PLM Simcenter Prescan</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1405,9 +1588,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Siemens PLM Simcenter Tyre</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1419,9 +1604,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Simcenter 3D Motion</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1433,9 +1620,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Simcenter Amesim Acoustics</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1447,9 +1636,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Simpack</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1461,9 +1652,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Simpack Vehicle Dynamics</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1475,9 +1668,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Simulink/Stateflow</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1489,9 +1684,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>STAR-CCM+</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1503,9 +1700,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>STAR-CD</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1517,9 +1716,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Tecplot 360</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1531,9 +1732,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Virtual.Lab Motion</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
@@ -1545,6 +1748,7 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>Abaqus</div></td>
@@ -1552,9 +1756,11 @@
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
+      <td><div></div></td>
     </tr>
     <tr>
       <td><div>LS-DYNA</div></td>
+      <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
       <td><div></div></td>
