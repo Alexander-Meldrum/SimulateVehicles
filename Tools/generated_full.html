@@ -55,36 +55,45 @@
             background-color: #ffffe1;
             white-space: normal;
         }
+        :root {
+            --colum_1_percentage: 13svw;
+            --colum_2_percentage: 23svw;
+            --colum_3_percentage: 10svw;
+            --colum_4_percentage: 10svw;
+            --colum_5_percentage: 10svw;
+            --colum_6_percentage: 30svw;
+            --colum_1_min_em: 13em;
+            --colum_2_min_em: 23em;
+            --colum_3_min_em: 10em;
+            --colum_4_min_em: 10em;
+            --colum_5_min_em: 10em;
+            --colum_6_min_em: 30em;
+        }
 
         th:nth-child(1), td:nth-child(1) {
-            width: 14em;
-            min-width: 14em;
-            max-width: 14em;
+            min-width: max(var(--colum_1_min_em), var(--colum_1_percentage));
+            max-width: max(var(--colum_1_min_em), var(--colum_1_percentage));
+
 		}
         th:nth-child(2), td:nth-child(2) {
-            width: 30em;
-            min-width: 30em;
-            max-width: 30em;
+            min-width: max(var(--colum_2_min_em), var(--colum_2_percentage));
+            max-width: max(var(--colum_2_min_em), var(--colum_2_percentage));
 		}
         th:nth-child(3), td:nth-child(3) {
-            width: 8em;
-            min-width: 8em;
-            max-width: 8em;
+            min-width: max(var(--colum_3_min_em), var(--colum_3_percentage));
+            max-width: max(var(--colum_3_min_em), var(--colum_3_percentage));
 		}
         th:nth-child(4), td:nth-child(4) {
-            width: 8em;
-            min-width: 8em;
-            max-width: 8em;
+            min-width: max(var(--colum_4_min_em), var(--colum_4_percentage));
+            max-width: max(var(--colum_4_min_em), var(--colum_4_percentage));
 		}
         th:nth-child(5), td:nth-child(5) {
-            width: 8em;
-            min-width: 8em;
-            max-width: 8em;
+            min-width: max(var(--colum_5_min_em), var(--colum_5_percentage));
+            max-width: max(var(--colum_5_min_em), var(--colum_5_percentage));
 		}
         th:nth-child(6), td:nth-child(6) {
-            width: 35em;
-            min-width: 35em;
-            max-width: 35em;
+            min-width: max(var(--colum_6_min_em), var(--colum_6_percentage));
+            max-width: max(var(--colum_6_min_em), var(--colum_6_percentage));
 		}
 
 		tr:nth-child(even) {
@@ -95,6 +104,13 @@
 			background-color: #F7FFC4;
             padding: 2px;
             margin: 0px;
+            /* font-size: 90%; */
+		}
+        input[type=text] {
+			/* background-color: #F7FFC4; */
+            padding: 2px;
+            margin: 0px;
+            width: 40em;
             /* font-size: 90%; */
 		}
 
