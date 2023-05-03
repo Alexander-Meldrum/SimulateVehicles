@@ -14,8 +14,8 @@ df['Tool'] = np.where(df['Link'].isna(), df['Tool'], '<a href="' + df['Link'] + 
 
 html_string = df.to_html(header=False, index=False, na_rep="", escape=False, columns=['Tool', 'Features','Game/Engineering','OS/Framework','Open Source', 'Description'])
 
-# replace new line with <br>
-html_string = html_string.replace('\\n','<br>')
+# replace new line with white space instead of <br>
+html_string = html_string.replace('\\n',' ')
 #print("The html string is:")
 #print(html_string)
 

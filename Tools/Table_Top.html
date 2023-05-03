@@ -5,18 +5,13 @@
 	<style>
         table {
             /* width: 1000px; */
-            /* width: min(100%,1080px); */
-            /* width: 2500px; */
             table-layout: fixed;
-            /* width: calc(100%); */
             border-collapse: collapse;
             display: block;
-            
-            /* white-space: normal; */
             font-size: 90%;
-
-            /* margin: 0 auto; */
             overflow-x: scroll;
+            /* white-space: normal; */
+            /* margin: 0 auto; */
             /* overflow-x: hidden; */
             /* max-width: 100%; */
 
@@ -31,14 +26,10 @@
             vertical-align: top;
 			text-align: left;
 			border: 1px solid #ddd;
-            /* white-space: nowrap;  */
             /* width: 200px;        */
-            /* overflow: hidden; */
             /* overflow: hidden; */
             /* white-space: nowrap;  */
             /* text-overflow: ellipsis; */
-            /* width: 3em;
-            max-width: 3em; */
 		}
 
         td {
@@ -52,22 +43,22 @@
             text-overflow: ellipsis;
         }
         td div:hover { 
-            background-color: #ffffe1;
+            background-color: #fffff0;
             white-space: normal;
         }
         :root {
             --colum_1_percentage: 13svw;
-            --colum_2_percentage: 24svw;
-            --colum_3_percentage: 10svw;
-            --colum_4_percentage: 10svw;
-            --colum_5_percentage: 10svw;
-            --colum_6_percentage: 30svw;
+            --colum_2_percentage: 28svw;
+            --colum_3_percentage: 8svw;
+            --colum_4_percentage: 8svw;
+            --colum_5_percentage: 6svw;
+            --colum_6_percentage: 33.7svw;
             --colum_1_min_em: 13em;
-            --colum_2_min_em: 24em;
-            --colum_3_min_em: 10em;
-            --colum_4_min_em: 10em;
-            --colum_5_min_em: 10em;
-            --colum_6_min_em: 30em;
+            --colum_2_min_em: 28em;
+            --colum_3_min_em: 8em;
+            --colum_4_min_em: 8em;
+            --colum_5_min_em: 6em;
+            --colum_6_min_em: 35em;
         }
 
         th:nth-child(1), td:nth-child(1) {
@@ -107,11 +98,11 @@
             /* font-size: 90%; */
 		}
         input[type=text] {
-			/* background-color: #F7FFC4; */
             padding: 2px;
-            margin: 0px;
-            width: 40em;
+            /* margin-top: 10px; */
+            /* width: 300px; */
             /* font-size: 90%; */
+            /* background-color: #F7FFC4; */
 		}
 
 
@@ -124,7 +115,7 @@
         overflow: auto;
         white-space: normal; 
         text-overflow: ellipsis;
-        background-color: #ffffe1;
+        background-color: #fffff0;
         }
         
 
@@ -132,7 +123,7 @@
 </head>
 <body>
     <input type="text" id="mySearchInput1" onkeyup="filterTable()" placeholder="Search (combined with table filters)" title="Search">
-    <br>
+    <!-- <br> -->
 
 	<script>
         
