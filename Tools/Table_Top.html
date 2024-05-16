@@ -3,17 +3,25 @@
 <head>
 	<title>Automotive Simulation Tool Table</title>
 	<style>
+
+        body {
+            /* margin-left: 10px; */
+            padding: 0;
+        }
+
         table {
             /* width: 1000px; */
             table-layout: fixed;
             border-collapse: collapse;
             display: block;
             font-size: 90%;
-            overflow-x: scroll;
+            /* overflow-x: scroll; */
             /* white-space: normal; */
-            /* margin: 0 auto; */
+            margin-left: 10px !important;
             /* overflow-x: hidden; */
             /* max-width: 100%; */
+            margin-right:auto; 
+            /* margin-left:0px */
 
         }
 
@@ -47,14 +55,14 @@
             white-space: normal;
         }
         :root {
-            --colum_1_percentage: 13svw;
-            --colum_2_percentage: 28svw;
+            --colum_1_percentage: 10svw;
+            --colum_2_percentage: 23svw;
             --colum_3_percentage: 8svw;
             --colum_4_percentage: 8svw;
             --colum_5_percentage: 7svw;
             --colum_6_percentage: 33.7svw;
-            --colum_1_min_em: 13em;
-            --colum_2_min_em: 28em;
+            --colum_1_min_em: 10em;
+            --colum_2_min_em: 23em;
             --colum_3_min_em: 8em;
             --colum_4_min_em: 8em;
             --colum_5_min_em: 7em;
@@ -100,16 +108,11 @@
         input[type=text] {
             padding: 2px;
             /* margin-top: 10px; */
-            /* width: 300px; */
+            width: 500px;
+            margin-left: 10px !important;
             /* font-size: 90%; */
             /* background-color: #F7FFC4; */
 		}
-
-
-        body {
-            margin: 0px;
-            padding: 0;
-        }
         
         .expand_cell {
         overflow: auto;
@@ -122,8 +125,8 @@
 	</style>
 </head>
 <body>
-    <input type="text" id="mySearchInput1" onkeyup="filterTable()" placeholder="Search (combined with table filters)" title="Search">
-    <!-- <br> -->
+    <input type="text" id="mySearchInput1" onkeyup="filterTable()" placeholder="Search (combined with table filters)" title="Search" align="left">
+    <br>
 
 	<script>
         
