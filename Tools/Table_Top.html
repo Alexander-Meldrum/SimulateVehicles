@@ -28,10 +28,11 @@
         th {
 			background-color: #F7FFC4;
             padding: 2px;
+            vertical-align: bottom;
 		}
 
 		th, td {
-            vertical-align: top;
+            /* vertical-align: top; */
 			text-align: left;
 			border: 1px solid #ddd;
             /* width: 200px;        */
@@ -41,6 +42,7 @@
 		}
 
         td {
+            vertical-align: top;
             padding: 0px;
         }
         td div {
@@ -55,18 +57,18 @@
             white-space: normal;
         }
         :root {
-            --colum_1_percentage: 10svw;
-            --colum_2_percentage: 23svw;
+            --colum_1_percentage: 11svw;
+            --colum_2_percentage: 16svw;
             --colum_3_percentage: 8svw;
             --colum_4_percentage: 8svw;
-            --colum_5_percentage: 7svw;
-            --colum_6_percentage: 33.7svw;
-            --colum_1_min_em: 10em;
-            --colum_2_min_em: 23em;
+            --colum_5_percentage: 4svw;
+            --colum_6_percentage: 32svw;
+            --colum_1_min_em: 11em;
+            --colum_2_min_em: 16em;
             --colum_3_min_em: 8em;
             --colum_4_min_em: 8em;
-            --colum_5_min_em: 7em;
-            --colum_6_min_em: 35em;
+            --colum_5_min_em: 4em;
+            --colum_6_min_em: 32em;
         }
 
         th:nth-child(1), td:nth-child(1) {
@@ -132,7 +134,7 @@
         
 		function filterTable() {
 			var tr, td, i, j, s, break_feature_loop;
-			var nr_of_selects_in_features = 3;
+			var nr_of_selects_in_features = 0;
             var features_column_nr = 2;
             var nr_of_table_columns = 6;
             

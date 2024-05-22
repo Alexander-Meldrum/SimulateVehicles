@@ -1,0 +1,27 @@
+.main-header-menu > .menu-item > a {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+.main-header-menu > .menu-item {
+    
+    font-weight: bold;
+}
+.remove-top-bottom-space {
+ margin-bottom: 00!important;
+ margin-top: 00!important;
+}
+
+.remove-bottom-space {
+ margin-bottom: 00!important;
+}
+
+.ql-img-displayed-equation {
+max-width: 85%;
+}
+
+.unclickable > a:hover {
+       cursor: default !important;
+}
+
+/* does not work	
+li {margin-left: 20px} */
