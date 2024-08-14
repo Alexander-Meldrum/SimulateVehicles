@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+Tools/generated_table_body_modified.html
+Tools/generated_table_body.html

@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import pyperclip # python -m pip install pyperclip 
 
 # Convert csv table to html table body and combine the html files.
 
@@ -23,28 +24,26 @@ html_string = html_string.replace('\\n',' ')
 html_string = html_string.replace('<td>','<td><div>')
 html_string = html_string.replace('</td>','</div></td>')
 
-text_file = open("generated_table_body.html", "w")
+text_file = open("generated_table_body.html", "w", encoding='UTF-8')
 text_file.write(html_string)
 text_file.close()
 
 # Remove first row from Generated_table_body
-with open('generated_table_body.html', 'r') as fin:
+with open('generated_table_body.html', 'r', encoding='UTF-8') as fin:
     data = fin.read().splitlines(True)
-with open('generated_table_body_modified.html', 'w') as fout:
+with open('generated_table_body_modified.html', 'w', encoding='UTF-8') as fout:
     fout.writelines(data[1:])
 
 # Combine Files
 filenames = ['Table_Top.html','Table_Header.html','generated_table_body_modified.html','Table_Bottom.html']
-with open('generated_full.html', 'w') as outfile:
+with open('generated_full.html', 'w', encoding='UTF-8') as outfile:
     for fname in filenames:
-        with open(fname) as infile:
+        with open(fname, encoding='UTF-8') as infile:
             outfile.write(infile.read())
 
-# Copy contents to clipboard (Windows)
-import os
-with open('generated_full.html', 'r') as file:
+# Copy contents to clipboard (Windows/linux)
+with open('generated_full.html', 'r', encoding='UTF-8') as file:
     data = file.read()
-import pyperclip # python -m pip install pyperclip 
 pyperclip.copy(data)
 
 print('generated_full.html contents copied to clipbord')

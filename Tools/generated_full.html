@@ -15,9 +15,9 @@
             border-collapse: collapse;
             display: block;
             font-size: 90%;
-            /* overflow-x: scroll; */
+            overflow-x: scroll; 
             /* white-space: normal; */
-            margin-left: 10px !important;
+            margin-left: 0px !important;
             /* overflow-x: hidden; */
             /* max-width: 100%; */
             margin-right:auto; 
@@ -111,7 +111,7 @@
             padding: 2px;
             /* margin-top: 10px; */
             width: 500px;
-            margin-left: 10px !important;
+            margin-left: 0px !important;
             /* font-size: 90%; */
             /* background-color: #F7FFC4; */
 		}
@@ -294,7 +294,7 @@
 			</select>
 		</th>
 		<th>Open-<br>Source<br>
-			<select class="table-filter" onchange="filterTable()">
+			<select class="table-filter" onchange="filterTable()" style="width: 50px;">
 				<option value="All">All</option>
 				<option value="Yes">Yes</option>
 				<option value="No">No</option>
@@ -584,7 +584,7 @@
       <td><div>AVL PUMA 2™ is the global industry standard for testbed automation. It is suitable for electrified testbed types as well as for conventional test environments.</div></td>
     </tr>
     <tr>
-      <td><div><a href="https://experience.avl.com/" target="_blank">AVL SCENIUS™️ Scenario Designer</a></div></td>
+      <td><div><a href="https://experience.avl.com/" target="_blank">AVL SCENIUS Scenario Designer</a></div></td>
       <td><div>CAE, Scenario Based Testing, OpenSCENARIO</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
@@ -840,220 +840,148 @@
       <td><div>ESMini is a lightweight, open-source simulation tool focusing on the development and testing of Advanced Driver Assistance Systems (ADAS) and autonomous driving features. It provides a platform for simulating traffic scenarios, vehicle dynamics, and interactions with the environment</div></td>
     </tr>
     <tr>
-      <td><div>Exa PowerFLOW</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://www.3ds.com/products/simulia/powerflow" target="_blank">PowerFLOW</a></div></td>
+      <td><div>CAE, CFD, Flow, Liquids</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
       <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>Transient Lattice Boltzmann-based physics PowerFLOW CFD solution performs simulations that accurately predict real world conditions. Using the PowerFLOW suite, engineers evaluate product performance early in the design process</div></td>
     </tr>
     <tr>
-      <td><div>FASTSim (Future Automotive Systems Technology Simulator)</div></td>
-      <td><div></div></td>
+      <td><div><a href="https://www.nrel.gov/transportation/fastsim.html" target="_blank">FASTSim (Future Automotive Systems Technology Simulator)</a></div></td>
+      <td><div>Engine, Powertrain, Electrical</div></td>
+      <td><div>Engineer.</div></td>
+      <td><div>Excel, Python</div></td>
+      <td><div>Yes</div></td>
+      <td><div>The Future Automotive Systems Technology Simulator (FASTSimTM) provides a simple way to compare powertrains and estimate the impact of technology improvements on light-, medium-, and heavy-duty vehicle efficiency, performance, cost, and battery life.</div></td>
+    </tr>
+    <tr>
+      <td><div><a href="https://femfat.magna.com/" target="_blank">FEMFAT</a></div></td>
+      <td><div>Fatigue Analysis, Lightweight Design</div></td>
+      <td><div>Engineer.</div></td>
+      <td><div>Desktop</div></td>
+      <td><div>No</div></td>
+      <td><div>Software for fatigue life prediction and lightweight design.</div></td>
+    </tr>
+    <tr>
+      <td><div><a href="https://flow-project.github.io/" target="_blank">Flow (Traffic Control Benchmarking Suite)</a></div></td>
+      <td><div>Traffic, Maps, ML, SUMO, Aimsun</div></td>
+      <td><div>Engineer.</div></td>
+      <td><div>Github</div></td>
+      <td><div>Yes</div></td>
+      <td><div>Flow is a traffic control benchmarking framework. It provides a suite of traffic control scenarios (benchmarks), tools for designing custom traffic scenarios, and integration with deep reinforcement learning and traffic microsimulation libraries.</div></td>
+    </tr>
+    <tr>
+      <td><div><a href="https://www.flow3d.com/" target="_blank">FLOW-3D</a></div></td>
+      <td><div>CAE, CFD, Flow, Liquids</div></td>
+      <td><div>Engineer.</div></td>
+      <td><div>Desktop</div></td>
+      <td><div>No</div></td>
+      <td><div>FLOW-3D is a computational fluid dynamics (CFD) software used for simulating fluid flows in various engineering applications. Developed by Flow Science, Inc., it is known for its powerful and accurate modeling capabilities, particularly in handling complex free-surface flows and multiphase flows.</div></td>
+    </tr>
+    <tr>
+      <td><div><a href="https://fmi-standard.org/" target="_blank">Functional Mock-up Interface (FMI)</a></div></td>
+      <td><div>FMI, FMU, Co-Simulation</div></td>
+      <td><div>Engineer.</div></td>
+      <td><div>Github, zip</div></td>
+      <td><div>No</div></td>
+      <td><div>The Functional Mock-up Interface is a free standard that defines a container and an interface to exchange dynamic simulation models using a combination of XML files, binaries and C code, distributed as a ZIP file. It is supported by 200+ tools and maintained as a Modelica Association Project.</div></td>
+    </tr>
+    <tr>
+      <td><div><a href="https://gamemaker.io/en" target="_blank">GameMaker Studio</a></div></td>
+      <td><div>Game Engine, 2D, 3D</div></td>
+      <td><div>Game</div></td>
+      <td><div>Desktop</div></td>
+      <td><div>No</div></td>
+      <td><div>GameMaker is a complete development tool for making 2D games, used by indie developers, professional studios, and educators worldwide. Create games for Windows, Mac, Linux, Android, iOS, HTML5, Xbox Series X|S, PlayStation 5, and Nintendo Switch.</div></td>
+    </tr>
+    <tr>
+      <td><div><a href="https://gazebosim.org/home" target="_blank">Gazebo</a></div></td>
+      <td><div>Robotics, ROS, 3D visualizer, Sensors, Physics, Transportation</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
       <td><div>Yes</div></td>
-      <td><div></div></td>
+      <td><div>Gazebo is an open-source 2D/3D robotics simulator that began development in 2002. In 2017, development forked into two versions, known as "Gazebo", the original monolithic architecture, and "Ignition", which had moved to becoming a modernized collection of loosely coupled libraries.</div></td>
     </tr>
     <tr>
-      <td><div>FEAview</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://godotengine.org/" target="_blank">Godot</a></div></td>
+      <td><div>Game Engine, 2D, 3D</div></td>
+      <td><div>Game</div></td>
+      <td><div>Desktop</div></td>
+      <td><div>No</div></td>
+      <td><div>Develop your 2D & 3D games, cross-platform projects, or even XR ideas</div></td>
+    </tr>
+    <tr>
+      <td><div><a href="https://www.gtisoft.com/gt-power/" target="_blank">GT-Power (Gamma Technologies)</a></div></td>
+      <td><div>Engine</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
       <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>GT-POWER is used to predict engine performance quantities such as power, torque, airflow, volumetric efficiency, fuel consumption, turbocharger performance and matching, and pumping losses, to name just a few.</div></td>
     </tr>
     <tr>
-      <td><div>FEMFAT</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://www.gtisoft.com/gt-suite/" target="_blank">GT-SUITE</a></div></td>
+      <td><div>CAE, Integrated Multi-physics Systems Simulation, Fluids, Electric, Thermal, Acoustics, Mechanical, Controls</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
       <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>Offers engineers functionalities ranging from fast concept design to detailed system or sub-system/component analyses, design optimization, and root cause investigation.</div></td>
     </tr>
     <tr>
-      <td><div>Flow (Traffic Control Benchmarking Suite)</div></td>
-      <td><div></div></td>
-      <td><div>Engineer.</div></td>
+      <td><div><a href="https://haxeflixel.com/" target="_blank">HaxeFlixel</a></div></td>
+      <td><div>Game Engine, 2D</div></td>
+      <td><div>Game</div></td>
       <td><div>Desktop</div></td>
       <td><div>Yes</div></td>
-      <td><div></div></td>
+      <td><div>HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology</div></td>
     </tr>
     <tr>
-      <td><div>FLOW-3D</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://www.sw.siemens.com/en-US/" target="_blank">HEEDS</a></div></td>
+      <td><div>CAE, Optimization</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
       <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>HEEDS facilitates efficient exploration and optimization of design options and parameters within the design space, enabling engineers to achieve superior results with greater ease and effectiveness.</div></td>
     </tr>
     <tr>
-      <td><div>FLUENT</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://www.appliedintuition.com/products/hil-sim" target="_blank">HIL Sim</a></div></td>
+      <td><div>HiL, AD, ADAS</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
       <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>Applied Intuition HIL Sim empowers ADAS and AD engineers to test and validate their hardware platforms and features. It shortens development and verification workflows</div></td>
     </tr>
     <tr>
-      <td><div>FM-MBS</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://www.appliedintuition.com/products/vehiclesim" target="_blank">SuspensionSim </a></div></td>
+      <td><div>Suspension</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
       <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>SuspensionSim is used by model users and model builders. Model users are engineers and designers who work with a given suspension layout, change hardpoint coordinates and stiffness properties, and then evaluate the suspension behavior by analyzing simulated test results.</div></td>
     </tr>
     <tr>
-      <td><div>Frostbite</div></td>
-      <td><div></div></td>
-      <td><div>Game</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>Functional Mock-up Interface (FMI)</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://altair.com/hypermesh" target="_blank">HyperMesh</a></div></td>
+      <td><div>CAE, FEM</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
       <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>Altair® HyperMesh® is a powerful simulation solution that redefines CAE design processes across industries with unmatched pre- and post-processing capabilities for finite element modeling. Powered by AI-augmented 3D modeling and visualization tools, next-gen design and optimization workflows</div></td>
     </tr>
     <tr>
-      <td><div>GameMaker Studio</div></td>
-      <td><div></div></td>
-      <td><div>Game</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>Gamma Technologies GT-Power</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://altair.com/hyperstudy" target="_blank">HyperStudy</a></div></td>
+      <td><div>CAE, Design Exploration and Optimization</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
       <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>HyperStudy is a multidisciplinary design study software that enables engineers to explore and optimize their product performance and robustness.</div></td>
     </tr>
     <tr>
-      <td><div>Gazebo</div></td>
-      <td><div></div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>Yes</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>Gearbox Design</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://altair.com/altair-hyperworks" target="_blank">HyperWorks</a></div></td>
+      <td><div>CAE, Structures, Motion, Fluids, Thermal, Electromagnetics</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
       <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>GEMS</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>Geomagic Design X</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>Godot</div></td>
-      <td><div></div></td>
-      <td><div>Game</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>Green Light District</div></td>
-      <td><div></div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>GT-Power</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>GT-SUITE</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>HaxeFlixel</div></td>
-      <td><div></div></td>
-      <td><div>Game</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>HEEDS</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>HIL Sim</div></td>
-      <td><div></div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>Horus (Vehicle Dynamics Simulator)</div></td>
-      <td><div></div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>HyperMesh</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>HyperStudy</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>HyperWorks</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>The Altair HyperWorks platform empowers engineers, scientists, designers, and more to tackle physics simulation and concept design challenges across multiple disciplines for structures, motion, fluids, thermal, electromagnetics, electronics, controls, and embedded systems</div></td>
     </tr>
     <tr>
       <td><div><a href="https://www.metacomptech.com/index.php/features/icfd" target="_blank">ICFD++</a></div></td>
@@ -1064,60 +992,36 @@
       <td><div>CFD++ is a computational fluid dynamics (CFD) software developed by Metacomp Technologies. It is a versatile and powerful tool used for simulating fluid flow, heat transfer, and related physical phenomena.</div></td>
     </tr>
     <tr>
-      <td><div>INSIGHT</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://www.3ds.com/products/simulia/isight" target="_blank">Isight</a></div></td>
+      <td><div>CAE, Optimization</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
       <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>Isight and the SIMULIA Execution Engine (formerly Fiper) integrate multiple cross-disciplinary models and applications within a simulation process flow. They automate the execution across distributed compute resources, explore the resulting design space, and identify the optimal design parameters within defined constraints.</div></td>
     </tr>
     <tr>
-      <td><div>Isight</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://www.jmag-international.com/" target="_blank">JMAG</a></div></td>
+      <td><div>Motor, Thermal, Electromagnetics</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
       <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>Used for electromagnetic field analysis and simulation, particularly in the design and analysis of electric machines, transformers, actuators, and other electromagnetic devices.</div></td>
     </tr>
     <tr>
-      <td><div>ITSsim (Intelligent Transportation Systems Simulator)</div></td>
-      <td><div></div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>Yes</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>ITSsim (Intelligent Transportation Systems Simulator)</div></td>
-      <td><div></div></td>
+      <td><div><a href="https://www.kisssoft.com/en" target="_blank">KISSsoft</a></div></td>
+      <td><div>Motor, Gears, Thermal, Electromagnetics</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
       <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>KISSsoft® is a modular calculation program for the design, optimization and verification of machine elements according to international standards.</div></td>
     </tr>
     <tr>
-      <td><div>JMAG</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://kuli.magna.com/" target="_blank">KULI</a></div></td>
+      <td><div>Thermal, Vehicle heating</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
       <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>KISSsoft</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>KULI</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>​​​​​​​​​​​Thermal management simulation is essential in the development process of every new vehicle. Understanding how individual components influence the overall system is necessary for an optimal design regarding energy consumption, emissions, noise, fatigue, and other parameters.</div></td>
     </tr>
     <tr>
       <td><div>LGSVL Simulator</div></td>
