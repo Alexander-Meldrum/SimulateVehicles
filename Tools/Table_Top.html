@@ -55,6 +55,7 @@
         td div:hover { 
             background-color: #fffff0;
             white-space: normal;
+            color: black;
         }
         :root {
             --colum_1_percentage: 11svw;
@@ -97,6 +98,11 @@
             max-width: max(var(--colum_6_min_em), var(--colum_6_percentage));
 		}
 
+        td:nth-child(6) {
+             /* Make description column lighter color unless hovered. */
+            color: lightgrey;
+		}
+
 		tr:nth-child(even) {
 			background-color: #f2f2f2;
 		}
@@ -121,6 +127,7 @@
         white-space: normal; 
         text-overflow: ellipsis;
         background-color: #fffff0;
+        color: black;
         }
         
 

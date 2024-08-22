@@ -55,6 +55,7 @@
         td div:hover { 
             background-color: #fffff0;
             white-space: normal;
+            color: black;
         }
         :root {
             --colum_1_percentage: 11svw;
@@ -97,6 +98,11 @@
             max-width: max(var(--colum_6_min_em), var(--colum_6_percentage));
 		}
 
+        td:nth-child(6) {
+             /* Make description column lighter color unless hovered. */
+            color: lightgrey;
+		}
+
 		tr:nth-child(even) {
 			background-color: #f2f2f2;
 		}
@@ -121,6 +127,7 @@
         white-space: normal; 
         text-overflow: ellipsis;
         background-color: #fffff0;
+        color: black;
         }
         
 
@@ -840,14 +847,6 @@
       <td><div>ESMini is a lightweight, open-source simulation tool focusing on the development and testing of Advanced Driver Assistance Systems (ADAS) and autonomous driving features. It provides a platform for simulating traffic scenarios, vehicle dynamics, and interactions with the environment</div></td>
     </tr>
     <tr>
-      <td><div><a href="https://www.3ds.com/products/simulia/powerflow" target="_blank">PowerFLOW</a></div></td>
-      <td><div>CAE, CFD, Flow, Liquids</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div>Transient Lattice Boltzmann-based physics PowerFLOW CFD solution performs simulations that accurately predict real world conditions. Using the PowerFLOW suite, engineers evaluate product performance early in the design process</div></td>
-    </tr>
-    <tr>
       <td><div><a href="https://www.nrel.gov/transportation/fastsim.html" target="_blank">FASTSim (Future Automotive Systems Technology Simulator)</a></div></td>
       <td><div>Engine, Powertrain, Electrical</div></td>
       <td><div>Engineer.</div></td>
@@ -952,14 +951,6 @@
       <td><div>Applied Intuition HIL Sim empowers ADAS and AD engineers to test and validate their hardware platforms and features. It shortens development and verification workflows</div></td>
     </tr>
     <tr>
-      <td><div><a href="https://www.appliedintuition.com/products/vehiclesim" target="_blank">SuspensionSim </a></div></td>
-      <td><div>Suspension</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div>SuspensionSim is used by model users and model builders. Model users are engineers and designers who work with a given suspension layout, change hardpoint coordinates and stiffness properties, and then evaluate the suspension behavior by analyzing simulated test results.</div></td>
-    </tr>
-    <tr>
       <td><div><a href="https://altair.com/hypermesh" target="_blank">HyperMesh</a></div></td>
       <td><div>CAE, FEM</div></td>
       <td><div>Engineer.</div></td>
@@ -1024,132 +1015,20 @@
       <td><div>​​​​​​​​​​​Thermal management simulation is essential in the development process of every new vehicle. Understanding how individual components influence the overall system is necessary for an optimal design regarding energy consumption, emissions, noise, fatigue, and other parameters.</div></td>
     </tr>
     <tr>
-      <td><div>LGSVL Simulator</div></td>
-      <td><div></div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
+      <td><div><a href="https://libgdx.com/" target="_blank">LibGDX</a></div></td>
+      <td><div>Game Engine, 2D, 3D</div></td>
+      <td><div>Game</div></td>
+      <td><div>Github</div></td>
       <td><div>Yes</div></td>
-      <td><div></div></td>
+      <td><div>libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.</div></td>
     </tr>
     <tr>
-      <td><div>LibGDX</div></td>
-      <td><div></div></td>
-      <td><div>Game</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>LMS Imagine.Lab Amesim</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://www.magmasoft.com/en/" target="_blank">MAGMASOFT  </a></div></td>
+      <td><div>Metal Casting Simulation</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
       <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>LMS Imagine.Lab Motion</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>LMS Imagine.Lab Sysdm</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>LMS Test.Lab</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>LMS Virtual.Lab Motion</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>LMS Virtual.Lab Rev</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>LMS Virtual.Lab Vehicle</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>LS-DYNA</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>LS-OPT</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>Lumberyard</div></td>
-      <td><div></div></td>
-      <td><div>Game</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>MADYMO</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>MADYMO Motorcycle</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>Magma Injection</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>MAGMA5</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>MAGMASOFT leads to robust and cost effective solutions in component design, tooling lay-out and production.</div></td>
     </tr>
     <tr>
       <td><div>MapleSim</div></td>
@@ -1368,6 +1247,14 @@
       <td><div></div></td>
     </tr>
     <tr>
+      <td><div><a href="https://o3de.org/" target="_blank">O3DE</a></div></td>
+      <td><div>Game Engine, 2D, 3D</div></td>
+      <td><div>Engineer./Game</div></td>
+      <td><div>Github</div></td>
+      <td><div>Yes</div></td>
+      <td><div>O3DE (Open 3D Engine) is an open-source, real-time, multi-platform 3D engine that enables developers and content creators to build AAA games, cinema-quality 3D worlds, and high-fidelity simulations without any fees or commercial obligations.</div></td>
+    </tr>
+    <tr>
       <td><div>Open Source Autonomous Driving (OpenAD)</div></td>
       <td><div></div></td>
       <td><div>Engineer.</div></td>
@@ -1534,6 +1421,14 @@
       <td><div>Desktop</div></td>
       <td><div>Yes</div></td>
       <td><div></div></td>
+    </tr>
+    <tr>
+      <td><div><a href="https://www.3ds.com/products/simulia/powerflow" target="_blank">PowerFLOW</a></div></td>
+      <td><div>CAE, CFD, Flow, Liquids</div></td>
+      <td><div>Engineer.</div></td>
+      <td><div>Desktop</div></td>
+      <td><div>No</div></td>
+      <td><div>Transient Lattice Boltzmann-based physics PowerFLOW CFD solution performs simulations that accurately predict real world conditions. Using the PowerFLOW suite, engineers evaluate product performance early in the design process</div></td>
     </tr>
     <tr>
       <td><div>PowerFLOW</div></td>
@@ -1736,6 +1631,22 @@
       <td><div>Simcenter durability simulation software gives you access to state-of-the art fatigue analysis methods that enable you to perform analyses quickly and accurately.</div></td>
     </tr>
     <tr>
+      <td><div><a href="https://plm.sw.siemens.com/en-US/" target="_blank">Simcenter MADYMO</a></div></td>
+      <td><div>Occupant & Pedestrian Safety, Crash</div></td>
+      <td><div>Engineer.</div></td>
+      <td><div>Desktop</div></td>
+      <td><div>No</div></td>
+      <td><div></div></td>
+    </tr>
+    <tr>
+      <td><div><a href="https://plm.sw.siemens.com/en-US/" target="_blank">Simcenter MADYMO Motorcycle</a></div></td>
+      <td><div>-</div></td>
+      <td><div>Engineer.</div></td>
+      <td><div>Desktop</div></td>
+      <td><div>No</div></td>
+      <td><div>Reduce new or improved vehicle development time and cost through early analysis and optimization of occupant and pedestrian safety.</div></td>
+    </tr>
+    <tr>
       <td><div><a href="https://plm.sw.siemens.com/en-US/" target="_blank">Simcenter Prescan</a></div></td>
       <td><div>CAE</div></td>
       <td><div>Engineer.</div></td>
@@ -1902,6 +1813,14 @@
       <td><div>Desktop</div></td>
       <td><div>No</div></td>
       <td><div></div></td>
+    </tr>
+    <tr>
+      <td><div><a href="https://www.appliedintuition.com/products/vehiclesim" target="_blank">SuspensionSim </a></div></td>
+      <td><div>Suspension</div></td>
+      <td><div>Engineer.</div></td>
+      <td><div>Desktop</div></td>
+      <td><div>No</div></td>
+      <td><div>SuspensionSim is used by model users and model builders. Model users are engineers and designers who work with a given suspension layout, change hardpoint coordinates and stiffness properties, and then evaluate the suspension behavior by analyzing simulated test results.</div></td>
     </tr>
     <tr>
       <td><div>Tecplot 360</div></td>
