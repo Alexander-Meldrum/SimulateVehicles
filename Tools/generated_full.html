@@ -60,16 +60,16 @@
         :root {
             --colum_1_percentage: 13svw;
             --colum_2_percentage: 20svw;
-            --colum_3_percentage: 8svw;
-            --colum_4_percentage: 8svw;
-            --colum_5_percentage: 4svw;
-            --colum_6_percentage: 28svw;
+            --colum_3_percentage: 6svw;
+            --colum_4_percentage: 7svw;
+            --colum_5_percentage: 28svw;
+            /* --colum_6_percentage: 28svw; */
             --colum_1_min_em: 13em;
             --colum_2_min_em: 20em;
-            --colum_3_min_em: 8em;
-            --colum_4_min_em: 8em;
-            --colum_5_min_em: 4em;
-            --colum_6_min_em: 28em;
+            --colum_3_min_em: 6em;
+            --colum_4_min_em: 7em;
+            --colum_5_min_em: 28em;
+            /* --colum_6_min_em: 28em; */
         }
 
         th:nth-child(1), td:nth-child(1) {
@@ -93,12 +93,12 @@
             min-width: max(var(--colum_5_min_em), var(--colum_5_percentage));
             max-width: max(var(--colum_5_min_em), var(--colum_5_percentage));
 		}
-        th:nth-child(6), td:nth-child(6) {
+        /* th:nth-child(6), td:nth-child(6) {
             min-width: max(var(--colum_6_min_em), var(--colum_6_percentage));
             max-width: max(var(--colum_6_min_em), var(--colum_6_percentage));
-		}
+		} */
 
-        td:nth-child(6) {
+        td:nth-child(5) {
              /* Make description column lighter color unless hovered. */
             color: lightgrey;
 		}
@@ -143,7 +143,7 @@
 			var tr, td, i, j, s, break_feature_loop;
 			var nr_of_selects_in_features = 0;
             var features_column_nr = 2;
-            var nr_of_table_columns = 6;
+            var nr_of_table_columns = 5;
             
 
             select_input_array = document.getElementsByTagName("select");
@@ -229,7 +229,7 @@
                         
                     }
                     // Else check each column with dropdown select
-                    else if (j == 2 || j == 3 || j == 4){
+                    else if (j == 2 || j == 3){
                         // console.log("Debug6");
                         // console.log("select_array[j + nr_of_selects_in_features - 2");
                         // console.log(select_array[j + nr_of_selects_in_features - features_column_nr]);
@@ -296,26 +296,32 @@
 			<select class="table-filter" onchange="filterTable()">
 				<option value="All">All</option>
 				<option value="Desktop">Desktop</option>
-				<option value="Github">Github</option>
+				<option value="OSS">OSS</option>
 				<option value="SDK">SDK</option>
 			</select>
 		</th>
-		<th>Open-<br>Source<br>
+		<!-- <th>Open-<br>Source<br>
 			<select class="table-filter" onchange="filterTable()" style="width: 50px;">
 				<option value="All">All</option>
 				<option value="Yes">Yes</option>
 				<option value="No">No</option>
 			</select>
-		</th>
+		</th> -->
 		<th>Description<br><br></th>
 	</thead>
   <tbody>
+    <tr>
+      <td><div><a href="https://github.com/a-b-street/abstreet#ab-street" target="_blank">A/B Street</a></div></td>
+      <td><div>Traffic, Maps, OpenStreetMap</div></td>
+      <td><div>Engineer.</div></td>
+      <td><div>OSS (GitHub)</div></td>
+      <td><div>Simulates cars, bikes, public transit, and pedestrians. It pulls data from OpenStreetMaps, and additionally infers details for lanes, traffic signals, parking lots, and more</div></td>
+    </tr>
     <tr>
       <td><div><a href="https://www.3ds.com/products/simulia/abaqus" target="_blank">Abaqus</a></div></td>
       <td><div>CAE, FEA</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Abaqus reaches the desk of engineering analysts as a robust Finite Element Analysis (FEA) software. It is designed to exploit the true generality of the theoretical potential of the method without imposing any unnecessary limitations. Abaqus assists engineers to simulate complex real-world problems for a wide range of industries and rely on it for advanced engineering simulations.</div></td>
     </tr>
     <tr>
@@ -323,7 +329,6 @@
       <td><div>CAE, NVH, Acoustics</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Powerful acoustic simulation software. Improve the acoustic performance of your designs with this complete simulation solution used by leading manufacturers around the world.</div></td>
     </tr>
     <tr>
@@ -331,7 +336,6 @@
       <td><div>CAE, CFD</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>For an analyst performing advanced computational fluid dynamics (CFD) modeling or a design engineer quickly needing to understand fluid or thermal effects on a design proposal, Altair offers a complete set of tools to support each project. From detailed component analysis to full systems performance, Altair provides a range of scalable solvers and robust pre- and post-processing software for CFD.</div></td>
     </tr>
     <tr>
@@ -339,7 +343,6 @@
       <td><div>CAE, HIL</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Adams helps engineers to study the dynamics of moving parts, and how loads and forces are distributed throughout mechanical systems.</div></td>
     </tr>
     <tr>
@@ -347,7 +350,6 @@
       <td><div>CAE, Dynamics, HIL, Suspension, Steering, Tire, Truck</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>With Adams Car vertical products, engineering teams can quickly build and test functional virtual prototypes of complete vehicles and vehicle subsystems. Working in the Adams vehicle vertical environment, automotive engineering teams can exercise their vehicle designs under various road conditions, performing the same tests they normally run in a test lab or on a test track, but in a fraction of time.</div></td>
     </tr>
     <tr>
@@ -355,7 +357,6 @@
       <td><div>CAE, FEA</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Adams allows you to create flexible parts conveniently even in the presence of large overall motion and complex interaction with other modeling elements.</div></td>
     </tr>
     <tr>
@@ -363,15 +364,13 @@
       <td><div>Traffic, Maps</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Aimsun is a software platform used for the modeling and simulation of transportation and traffic systems.</div></td>
     </tr>
     <tr>
       <td><div><a href="https://github.com/microsoft/AirSim" target="_blank">AirSim</a></div></td>
       <td><div>ADAS, AD</div></td>
       <td><div>Engineer.</div></td>
-      <td><div>Github</div></td>
-      <td><div>Yes</div></td>
+      <td><div>OSS (GitHub)</div></td>
       <td><div>AirSim is a powerful and versatile simulation tool aimed at advancing research and development in autonomous systems. Its realistic simulation capabilities, extensive sensor support, and open-source nature make it a valuable resource for researchers and developers in the field of autonomous vehicle technology.</div></td>
     </tr>
     <tr>
@@ -379,7 +378,6 @@
       <td><div>Cloud based simulator, CARLA, UNITY, Unreal</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Alpha Drive Is A Platform Providing Cloud-Based Data And Tools For Testing And Validation Of AI Algorithms.</div></td>
     </tr>
     <tr>
@@ -387,7 +385,6 @@
       <td><div>CAE, MBD, Digital Twin</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Altair® Twin Activate™ is an open and flexible integration solution that enables whole system simulation with real-time digital twin deployment through any stage of the product lifecycle.</div></td>
     </tr>
     <tr>
@@ -395,7 +392,6 @@
       <td><div>CAE, Magnetics, Electric</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Flux captures the complexity of electromechanical equipment to optimize their performance, efficiency, dimensions, cost or weight with precision, bringing better innovation and value products to end users. Flux simulates magneto static, steady-state and transient conditions, along with electrical and thermal properties.</div></td>
     </tr>
     <tr>
@@ -403,15 +399,20 @@
       <td><div>CAE</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Altair® Inspire™ is an intuitive, powerful family of integrated software products that accelerates simulation-driven design throughout the product development lifecycle, from concept to reality, while reducing product time-to-market.</div></td>
+    </tr>
+    <tr>
+      <td><div><a href="https://altair.com/motionsolve" target="_blank">Altair MotionSolve</a></div></td>
+      <td><div>Multibody System Simulation, Discrete Element Modelling, Nonlinear Flexbodies, CFD Coupling, Controls Integration, Signal processing.</div></td>
+      <td><div>Engineer.</div></td>
+      <td><div>Desktop</div></td>
+      <td><div>MotionSolve is a comprehensive multibody simulation software that helps you easily build and execute complex system models to evaluate the dynamic response of products and optimize their performance.</div></td>
     </tr>
     <tr>
       <td><div><a href="https://www.beta-cae.com/ansa.htm" target="_blank">ANSA</a></div></td>
       <td><div>CAE</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>ANSA is an advanced multidisciplinary CAE pre-processing tool that provides all the necessary functionality for full-model build up, from CAD data to ready-to-run solver input file, in a single integrated environment.</div></td>
     </tr>
     <tr>
@@ -419,7 +420,6 @@
       <td><div>CAE, Mechanical, CFD, Thermal, Acoustics, Autonomous Vehicles, Digital Twin, Electromagnetics, Embedded software, Fluids, Optics, Structures, Semiconductors</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>ANSYS is a suite of engineering simulation software developed by ANSYS, Inc. It's widely used across various industries for simulating and analyzing how products will behave and perform in real-world scenarios before they are actually manufactured or deployed. ANSYS software covers a wide range of disciplines including structural analysis, fluid dynamics, electromagnetics, and more. It's often used by engineers and designers to optimize designs, troubleshoot problems, and reduce the need for physical prototypes, ultimately saving time and resources in the product development process.</div></td>
     </tr>
     <tr>
@@ -427,7 +427,6 @@
       <td><div>CFD, Flow, Turbomachinery</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>CFD software for turbomachinery applications.</div></td>
     </tr>
     <tr>
@@ -435,7 +434,6 @@
       <td><div>CAE, Fluids</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Ansys Fluent is a general-purpose computational fluid dynamics (CFD) software used to model fluid flow, heat and mass transfer, chemical reactions, and more. Fluent offers a modern, user-friendly interface that streamlines the CFD process from pre- to post-processing within a single window workflow.</div></td>
     </tr>
     <tr>
@@ -443,7 +441,6 @@
       <td><div>CAE, Drop tests, Impact and Penetration, Smashes and Crashes, Occupant safety</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Simulate the Response of Materials to Short Periods of Severe Loading. Ansys LS-DYNA is capable of simulating the response of materials to short periods of severe loading. Its many elements, contact formulations, material models and other controls can be used to simulate complex models with control over all the details of the problem.</div></td>
     </tr>
     <tr>
@@ -451,7 +448,6 @@
       <td><div>CAE, FEA, Structures</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Ansys Mechanical is a finite element analysis (FEA) software used to perform structural analysis using advanced solver options, including linear dynamics, nonlinearities, thermal analysis, materials, composites, hydrodynamic, explicit, and more.</div></td>
     </tr>
     <tr>
@@ -459,7 +455,6 @@
       <td><div>Multibody Dynamics</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Ansys Motion is a completely integrated simulation environment for both component and system modeling. It provides fast and accurate analysis for both rigid and flexible bodies, simultaneously, all from a single solver. System motion performance, stress-safety analysis, heat transfer, vibration and fatigue are integral.</div></td>
     </tr>
     <tr>
@@ -467,7 +462,6 @@
       <td><div>CAE, Motor, Magnetics, Thermal</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Motor-CAD enables design engineers to evaluate motor topologies and concepts across the full operating range, to produce designs that are optimized for performance, efficiency and size.</div></td>
     </tr>
     <tr>
@@ -475,7 +469,6 @@
       <td><div>CAE, Particles, Flow</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Ansys Rocky a discrete element method (DEM) software used for simulating the motion of granular and discontinuous material. Rocky is designed to solve engineering problems. Rocky is uniquely capable to models real particle shapes including any solids, 2D shells, and rigid and flexible fibers. The simulations are fast and accurate. With multi-graphics processing unit (GPU) solver technology, you can simulate the behavior of different shaped and sized particles in many industrial applications.</div></td>
     </tr>
     <tr>
@@ -483,7 +476,6 @@
       <td><div>CAE, ECAD, FEA, CFD, Electric</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>With embedded libraries containing over one million parts, Sherlock rapidly converts electronic computer-aided design (ECAD) files into computational fluid dynamics (CFD) and finite element analysis (FEA) models.</div></td>
     </tr>
     <tr>
@@ -491,15 +483,13 @@
       <td><div>CAE, Heat Transfer, Fluids, Thermal</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Ansys Thermal Desktop includes all aspects of thermal model creation, including built-in finite difference, finite element, and lumped capacitance objects that can be combined into any configuration to solve complex thermal and fluid flow problems.</div></td>
     </tr>
     <tr>
       <td><div><a href="https://github.com/ApolloAuto/apollo" target="_blank">Apollo (by Baidu)</a></div></td>
       <td><div>ADAS, AD</div></td>
       <td><div>Engineer.</div></td>
-      <td><div>Github</div></td>
-      <td><div>Yes</div></td>
+      <td><div>OSS (GitHub)</div></td>
       <td><div>Apollo is a high performance, flexible architecture which accelerates the development, testing, and deployment of Autonomous Vehicles.</div></td>
     </tr>
     <tr>
@@ -507,15 +497,13 @@
       <td><div>Game Development Kit</div></td>
       <td><div>Game</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>AppGameKit is a game creation system for mobile cross platform development.</div></td>
     </tr>
     <tr>
       <td><div><a href="https://github.com/ArduPilot/ardupilot" target="_blank">ArduPilot</a></div></td>
       <td><div>Autopilot, Controls</div></td>
       <td><div>Engineer./Game</div></td>
-      <td><div>Github</div></td>
-      <td><div>Yes</div></td>
+      <td><div>OSS (GitHub)</div></td>
       <td><div>ArduPilot is a trusted, versatile, and open source autopilot system supporting many vehicle types: multi-copters, traditional helicopters, fixed wing aircraft, boats, submarines, rovers and more.</div></td>
     </tr>
     <tr>
@@ -523,7 +511,6 @@
       <td><div>CAE, Sheet Metal</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>AutoForm’s software solutions form a comprehensive platform for the engineering, evaluation and improvement of the sheet metal forming and BiW assembly processes. This platform allows for full digitalization, seamless information and data flow, and integration of Industry 4.0 standards.</div></td>
     </tr>
     <tr>
@@ -531,15 +518,13 @@
       <td><div>ADAS, AD, Maps, OpenDRIVE, SIL, HIL, Simulink</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Automated Driving Toolbox provides algorithms and tools for designing, simulating, and testing ADAS and autonomous driving systems. You can design and test vision and lidar perception systems, as well as sensor fusion, path planning, and vehicle controllers.</div></td>
     </tr>
     <tr>
       <td><div><a href="https://github.com/autowarefoundation/autoware" target="_blank">Autoware</a></div></td>
       <td><div>ADAS, AD, ROS</div></td>
       <td><div>Engineer.</div></td>
-      <td><div>Github</div></td>
-      <td><div>Yes</div></td>
+      <td><div>OSS (GitHub)</div></td>
       <td><div>Autoware is an open-source software stack for self-driving vehicles, built on the Robot Operating System (ROS). It includes all of the necessary functions to drive an autonomous vehicles from localization and object detection to route planning and control, and was created with the aim of enabling as many individuals and organizations as possible to contribute to open innovations in autonomous driving technology.</div></td>
     </tr>
     <tr>
@@ -547,7 +532,6 @@
       <td><div>CAE, SIL, ADAS, Battery, Fuel Cell, Hybrid</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>AVL CAMEO™ with its new integrated Functional Testing for Automotive Software, opens up a new dimension of superlatives for the DevOps engineer in automotive development. With new interfaces to SiL, HiL and in-vehicle it expands its activities to the necessary test environments. With the ability to interface to software test automation pipelines and software life cycle management tools the integration in a DevOps toolchain is made possible.</div></td>
     </tr>
     <tr>
@@ -555,7 +539,6 @@
       <td><div>CAE, Engine, Fow, Driveline, Electrics, Hydraulics.</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>AVL CRUISE M is a multi-disciplinary system simulation solution that supports model-based development using high quality real-time models from domains including engine, flow, aftertreatment, driveline, electrics, and hydraulics.</div></td>
     </tr>
     <tr>
@@ -563,7 +546,6 @@
       <td><div>CAE, MBD, Multi-Body Dynamics, Structural Dynamics Optimization, NVH, Propulsion Systems</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>With AVL EXCITE™, you get an innovative multi-body dynamics software solution for powertrain analysis. The tool calculates the dynamics, vibration and acoustics of combustion engines, transmissions and complete ICE-based or electrified drive units.</div></td>
     </tr>
     <tr>
@@ -571,7 +553,6 @@
       <td><div>CAE, Engine, Emissions</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Combines the proven tools AVL FAME™ M Engine and AVL FAME™ Poly. It is integrated in the AVL Simulation Desktop and is called AVL FAME™ M Engine S.</div></td>
     </tr>
     <tr>
@@ -579,7 +560,6 @@
       <td><div>Hybrid EVs, Plug-in hybrid EVs, Battery EVs, Fuel cell EVs</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>A versatile test system (TS) for validating pure ice and electrified propulsion systems.</div></td>
     </tr>
     <tr>
@@ -587,7 +567,6 @@
       <td><div>HIL, Powertrain</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>AVL PUMA 2™ is the global industry standard for testbed automation. It is suitable for electrified testbed types as well as for conventional test environments.</div></td>
     </tr>
     <tr>
@@ -595,7 +574,6 @@
       <td><div>CAE, Scenario Based Testing, OpenSCENARIO</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Enables accurate test scenario design for Advanced Driver Assistance Systems (ADAS) and Automated Driving (AD) for effective test planning and maximum test coverage. Effortlessly create various scenario definitions and visualize them with the integrated scenario player.</div></td>
     </tr>
     <tr>
@@ -603,7 +581,6 @@
       <td><div>MBD, SIL, HIL</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Experience real-world simulations in miscellaneous testing and calibration environments like Software-in-the-Loop SiL, Hardware-in-the-Loop (HiL), testbeds, and vehicles. Explore the AVL SiL Suite´s heuristic components covering Controller Software, Co-Simulation, Calibration Assistance, Virtual Testing Assistance</div></td>
     </tr>
     <tr>
@@ -611,7 +588,6 @@
       <td><div>MBD, Threat Analysis, Risk Assessment, Cybersecurity</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Automated analyzing and pointing out cyber-related security threats</div></td>
     </tr>
     <tr>
@@ -619,7 +595,6 @@
       <td><div>HIL, Real-time, Comfort Calibration, Nonlinear multi-body, Dynamics, Scenario Based Testing, Battery, Tires, Real-Time</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>VSM is a comprehensive and flexible real-time simulation tool that allows you to consider vehicle characteristics and driving behavior along with energy efficiency.</div></td>
     </tr>
     <tr>
@@ -627,15 +602,20 @@
       <td><div>Vehicle Attribute Assessment</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Shape your vehicle’s character and develop its distinctive driving DNA. Break free from subjective testing limitations, evaluate countless maneuvers and objectify driving attributes in a reproducible and user-friendly way. In real-time, throughout all development phases, in the virtual and real world.</div></td>
+    </tr>
+    <tr>
+      <td><div><a href="https://github.com/tier4/AWSIM" target="_blank">AWSIM & AWSIM Labs</a></div></td>
+      <td><div>Autoware, AD, ADAS, Unity, Scenario Based, ROS</div></td>
+      <td><div>Engineer.</div></td>
+      <td><div>Desktop</div></td>
+      <td><div>AWSIM is a simulator for Autoware development and testing</div></td>
     </tr>
     <tr>
       <td><div><a href="https://beamng.tech/" target="_blank">BeamNG.tech</a></div></td>
       <td><div>MIL, ADAS, Sensors, Soft-Body Physics, Driving Simulator</div></td>
       <td><div>Engineer.</div></td>
-      <td><div>Github, Desktop</div></td>
-      <td><div>Yes</div></td>
+      <td><div>OSS (GitHub), Desktop</div></td>
       <td><div>BeamNG.tech is a versatile simulation platform suitable for the development of state of the art advanced driver-assistance systems (ADAS). We provide a highly customizable simulation environment that supports development in terms of data acquisition and X-in-the-loop development. With our custom build physics engine and detailed vehicle models, we are taking data acquisition to the next level by combining a high degree of physical realism with elaborate sensor models and photo-realistic imagery.</div></td>
     </tr>
     <tr>
@@ -643,15 +623,20 @@
       <td><div>CAE, CAD, CFD</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Automate the geometry optimization. CAESES helps you to achieve this goal by letting you create powerful robust geometry models that can be integrated into any simulation-driven optimization loop.</div></td>
+    </tr>
+    <tr>
+      <td><div><a href="https://www.vector.com/us/en/" target="_blank">CANalyzer/CANape/CANoe</a></div></td>
+      <td><div>ECU Calibration & diagnostics, Restbus Simulation, HIL, Ethernet, CAN message</div></td>
+      <td><div>Engineer.</div></td>
+      <td><div>Desktop</div></td>
+      <td><div>Vector offers multifaceted tools that are available for ECU development, calibration and diagnostics.</div></td>
     </tr>
     <tr>
       <td><div><a href="https://carla.org/" target="_blank">CARLA</a></div></td>
       <td><div>Traffic, Maps, Dynamics, AD, Autoware, ROS, Lidar, Camera, Sensors, OpenDRIVE</div></td>
       <td><div>Engineer.</div></td>
-      <td><div>Github, Desktop</div></td>
-      <td><div>Yes</div></td>
+      <td><div>OSS (GitHub), Desktop</div></td>
       <td><div>CARLA has been developed from the ground up to support development, training, and validation of autonomous driving systems. In addition to open-source code and protocols, CARLA provides open digital assets (urban layouts, buildings, vehicles) that were created for this purpose and can be used freely. The simulation platform supports flexible specification of sensor suites, environmental conditions, full control of all static and dynamic actors, maps generation and much more.</div></td>
     </tr>
     <tr>
@@ -659,7 +644,6 @@
       <td><div>Dynamics, Scenario Based Testing, HIL, Real-Time</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop, Real-Time HW</div></td>
-      <td><div>No</div></td>
       <td><div>CarMaker Realtime is often used in HiL setups, where actual vehicle components (such as ECUs) are tested in conjunction with simulated vehicle models. This helps in verifying the integration and functionality of hardware components.</div></td>
     </tr>
     <tr>
@@ -667,7 +651,6 @@
       <td><div>Dynamics, Scenario Based Testing, MIL, SIL,HIL, VIL, Real-Time, Traffic, ADAS, AD, Powertrain, Data analysis and evaluation, FMI, OpenDRIVE, MATLAB/SIMULINK</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop, Real-Time HW</div></td>
-      <td><div>No</div></td>
       <td><div>Open integration and test platform for virtual test driving. CarMaker itself is an advanced software package for Model-Based Design, testing, and development in the field of vehicle dynamics for cars, motorcycles and trucks.</div></td>
     </tr>
     <tr>
@@ -675,7 +658,6 @@
       <td><div>Driving Simulator, Dynamics, HIL</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Carnetsoft develops and sells software for desktop driving simulator applications.</div></td>
     </tr>
     <tr>
@@ -683,7 +665,6 @@
       <td><div>Dynamics, Scenario Based Testing, MIL, SIL,HIL, VIL, Real-Time, Traffic, ADAS, AD, Powertrain, Data analysis and evaluation</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop, Real-Time HW</div></td>
-      <td><div>No</div></td>
       <td><div>CarSim is a simulation software developed by Mechanical Simulation Corporation that is widely used in the automotive industry for vehicle dynamics modeling and testing. It provides a comprehensive environment for simulating and analyzing the behavior of passenger cars, light trucks, and utility vehicles under various driving conditions.</div></td>
     </tr>
     <tr>
@@ -691,7 +672,6 @@
       <td><div>CAE, CAD, CFD, FEA, Fluids, Electrical, Structural, Vibration, Thermal</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>CATIA (Computer-Aided Three-dimensional Interactive Application) is a multi-platform software suite developed by Dassault Systèmes. It is widely used for computer-aided design (CAD), computer-aided manufacturing (CAM), computer-aided engineering (CAE), and product lifecycle management (PLM).</div></td>
     </tr>
     <tr>
@@ -699,15 +679,13 @@
       <td><div>Track Simulator, Driving Simulator, Dynamics, Aerodynamics, Tires, Power Train</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>ChassisSim is a specialized software tool used for simulating and analyzing the dynamic behavior of race car and high-performance vehicle chassis systems.</div></td>
     </tr>
     <tr>
       <td><div><a href="https://github.com/cityflow-project/CityFlow" target="_blank">CityFlow</a></div></td>
       <td><div>Traffic, Maps</div></td>
       <td><div>Engineer.</div></td>
-      <td><div>Github</div></td>
-      <td><div>Yes</div></td>
+      <td><div>OSS (GitHub)</div></td>
       <td><div>A microscopic traffic simulator which simulates the behavior of each vehicle, providing highest level detail of traffic evolution.</div></td>
     </tr>
     <tr>
@@ -715,7 +693,6 @@
       <td><div>C++, Lua, and JavaScript, HMI, 3D Car Model, ADAS visualization</div></td>
       <td><div>Game</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Cocos2d is an open-source game development framework for creating 2D games and other graphical software for iOS, Android, Windows, macOS, Linux, HarmonyOS, OpenHarmony and web platforms. It is written in C++</div></td>
     </tr>
     <tr>
@@ -723,7 +700,6 @@
       <td><div>Motion planning benchmarks, Scenario database, Autoware</div></td>
       <td><div>Engineer.</div></td>
       <td><div>OSS, Desktop</div></td>
-      <td><div>Yes</div></td>
       <td><div>CommonRoad is a collection of composable benchmarks for motion planning on roads, which provides researchers with a means of evaluating and comparing their motion planners.</div></td>
     </tr>
     <tr>
@@ -731,7 +707,6 @@
       <td><div>2D Game Enginer, Javascript</div></td>
       <td><div>Game</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Construct is a game development tool designed to make game creation accessible and straightforward, especially for individuals who may not have extensive programming experience.</div></td>
     </tr>
     <tr>
@@ -739,7 +714,6 @@
       <td><div>CFD</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>CONVERGE features autonomous meshing, state-of-the-art physical models, a robust chemistry solver, and the ability to easily accommodate complex moving geometries.</div></td>
     </tr>
     <tr>
@@ -747,7 +721,6 @@
       <td><div>Co-simulation, FMI, Modelica, C, C++, Java, VHDL, VHDL-AMS, MATLAB, Simulink, HIL, SIL</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>CosiMate uses an open architecture based on a co-simulation bus. This solution offers two major advantages, an open architecture enabling multi-point integration and communication of heterogeneous simulators, and the ability to simulate models across the network optimizing CPU usage and simulation performance.</div></td>
     </tr>
     <tr>
@@ -755,23 +728,20 @@
       <td><div>CFD, Fluids</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Thermo-fluid analysis software is a simulation tool used for analyzing complex thermal/fluid phenomena. Software simulation enables predicting performance prior to hardware prototype.</div></td>
     </tr>
     <tr>
       <td><div><a href="https://www.cryengine.com/" target="_blank">CryEngine</a></div></td>
       <td><div>Game Development Kit, 3D</div></td>
       <td><div>Game</div></td>
-      <td><div>Github, Desktop</div></td>
-      <td><div>No/Yes</div></td>
+      <td><div>OSS (GitHub), Desktop</div></td>
       <td><div>Physical simulations that take into account real world physical properties in a realistic manner to provide easily configurable and dynamic scenes.</div></td>
     </tr>
     <tr>
       <td><div><a href="https://dart.readthedocs.io/en/latest/" target="_blank">DARTS</a></div></td>
       <td><div>Kinematic & dynamic applications in robotics and computer animation</div></td>
       <td><div>Engineer.</div></td>
-      <td><div>Github</div></td>
-      <td><div>Yes</div></td>
+      <td><div>OSS (GitHub)</div></td>
       <td><div>DART (Dynamic Animation and Robotics Toolkit) is a collaborative, cross-platform, open-source library. It provides data structures and algorithms for kinematic and dynamic applications in robotics and computer animation.</div></td>
     </tr>
     <tr>
@@ -779,7 +749,6 @@
       <td><div>Game Development Kit, 2D, 3D, Free</div></td>
       <td><div>Game</div></td>
       <td><div>OSS, Desktop</div></td>
-      <td><div>No/Yes</div></td>
       <td><div>Defold is a cross-platform game engine known for its lightweight design and powerful features, enabling developers to create high-quality 2D games. While Defold doesn't come with pre-built vehicle simulations, its flexibility and scripting capabilities allow developers to implement a wide range of vehicle types and simulations.</div></td>
     </tr>
     <tr>
@@ -787,7 +756,6 @@
       <td><div>Data Analysis & Visualization</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>NI DIAdem is software for managing, analyzing, and reporting data collected during data acquisition and/or generated during simulations.</div></td>
     </tr>
     <tr>
@@ -795,7 +763,6 @@
       <td><div>AD, ADAS, Sensors, HIL, GPU, CUDA</div></td>
       <td><div>Engineer.</div></td>
       <td><div>SDK</div></td>
-      <td><div>No</div></td>
       <td><div>NVIDIA DRIVE Sim™ is an end-to-end simulation platform, architected from the ground up to run large-scale, physically based multi-sensor simulation. It's open, scalable, modular, and supports AV development and validation from concept to deployment, improving developer productivity and accelerating time to market.</div></td>
     </tr>
     <tr>
@@ -803,7 +770,6 @@
       <td><div>HIL, Dynamics, Combustion Engine, Electric, Simulink</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>ASM is a tool suite for simulating combustion engines, vehicle dynamics, electric components, and the traffic environment. The open Simulink models are used for model-based function development and in ECU tests on a hardware-in-the-loop (HIL) simulator.</div></td>
     </tr>
     <tr>
@@ -811,7 +777,6 @@
       <td><div>Modelica, FMI, MBD, Catia, HIL</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Dymola, Dynamic Modeling Laboratory, is a complete tool for modeling and simulation of integrated and complex systems for use within automotive, aerospace, robotics, process and other applications. Rapidly solve complex multi-disciplinary systems modeling and analysis problems.</div></td>
     </tr>
     <tr>
@@ -819,7 +784,6 @@
       <td><div>Virtual Test Driving, Vector, Real-Time, Dynamics, Engines, HIL, Electric, Sensors, Traffic</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop, Real-Time HW</div></td>
-      <td><div>No</div></td>
       <td><div>An open simulation environment for the virtual test driving of cars and commercial vehicles. The physical models include vehicle dynamics, powertrain, combustion engines, electric motors, sensors and traffic.</div></td>
     </tr>
     <tr>
@@ -827,7 +791,6 @@
       <td><div>CAE, Control systems, Hydraulics, Pneumatics, Gaseous flow, Thermal, Electrical, Mechanical, Refrigeration, Environment control, Lubrication, Fuel systems</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Accurately simulate control systems, hydraulics (including thermal effects), pneumatics, gaseous flow, thermal, electrical, mechanical, refrigeration, environment control, lubrication or fuel systems, and sampled-data/discrete-time behaviour.</div></td>
     </tr>
     <tr>
@@ -835,15 +798,13 @@
       <td><div>Engine</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Engine Simulation is the process of using computer software to simulate a dynamometer (dyno) so you can see what changes to the engines assembly generate greater or lesser horse power or torque.</div></td>
     </tr>
     <tr>
       <td><div><a href="https://github.com/esmini/esmini" target="_blank">esmini</a></div></td>
       <td><div>OSI, OpenDrive, OpenScenario, Unity, Traffic, Dynamics</div></td>
       <td><div>Engineer.</div></td>
-      <td><div>Github</div></td>
-      <td><div>Yes</div></td>
+      <td><div>OSS (GitHub)</div></td>
       <td><div>ESMini is a lightweight, open-source simulation tool focusing on the development and testing of Advanced Driver Assistance Systems (ADAS) and autonomous driving features. It provides a platform for simulating traffic scenarios, vehicle dynamics, and interactions with the environment</div></td>
     </tr>
     <tr>
@@ -851,7 +812,6 @@
       <td><div>Engine, Powertrain, Electrical</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Excel, Python</div></td>
-      <td><div>Yes</div></td>
       <td><div>The Future Automotive Systems Technology Simulator (FASTSimTM) provides a simple way to compare powertrains and estimate the impact of technology improvements on light-, medium-, and heavy-duty vehicle efficiency, performance, cost, and battery life.</div></td>
     </tr>
     <tr>
@@ -859,15 +819,20 @@
       <td><div>Fatigue Analysis, Lightweight Design</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Software for fatigue life prediction and lightweight design.</div></td>
+    </tr>
+    <tr>
+      <td><div><a href="https://www.cadence.com/ko_KR/home.html" target="_blank">Fidelity CFD Software (Cadence)</a></div></td>
+      <td><div>CAE, CFD, Acoustics</div></td>
+      <td><div>Engineer.</div></td>
+      <td><div>Desktop</div></td>
+      <td><div>Leading CFD software for engineering simulations and multiphysics system analysis. Simulate fluid dynamics, heat transfer, and more with precision</div></td>
     </tr>
     <tr>
       <td><div><a href="https://flow-project.github.io/" target="_blank">Flow (Traffic Control Benchmarking Suite)</a></div></td>
       <td><div>Traffic, Maps, ML, SUMO, Aimsun</div></td>
       <td><div>Engineer.</div></td>
-      <td><div>Github</div></td>
-      <td><div>Yes</div></td>
+      <td><div>OSS (GitHub)</div></td>
       <td><div>Flow is a traffic control benchmarking framework. It provides a suite of traffic control scenarios (benchmarks), tools for designing custom traffic scenarios, and integration with deep reinforcement learning and traffic microsimulation libraries.</div></td>
     </tr>
     <tr>
@@ -875,15 +840,13 @@
       <td><div>CAE, CFD, Flow, Liquids</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>FLOW-3D is a computational fluid dynamics (CFD) software used for simulating fluid flows in various engineering applications. Developed by Flow Science, Inc., it is known for its powerful and accurate modeling capabilities, particularly in handling complex free-surface flows and multiphase flows.</div></td>
     </tr>
     <tr>
       <td><div><a href="https://fmi-standard.org/" target="_blank">Functional Mock-up Interface (FMI)</a></div></td>
       <td><div>FMI, FMU, Co-Simulation</div></td>
       <td><div>Engineer.</div></td>
-      <td><div>Github, zip</div></td>
-      <td><div>No</div></td>
+      <td><div>OSS (GitHub), zip</div></td>
       <td><div>The Functional Mock-up Interface is a free standard that defines a container and an interface to exchange dynamic simulation models using a combination of XML files, binaries and C code, distributed as a ZIP file. It is supported by 200+ tools and maintained as a Modelica Association Project.</div></td>
     </tr>
     <tr>
@@ -891,7 +854,6 @@
       <td><div>Game Engine, 2D, 3D</div></td>
       <td><div>Game</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>GameMaker is a complete development tool for making 2D games, used by indie developers, professional studios, and educators worldwide. Create games for Windows, Mac, Linux, Android, iOS, HTML5, Xbox Series X|S, PlayStation 5, and Nintendo Switch.</div></td>
     </tr>
     <tr>
@@ -899,7 +861,6 @@
       <td><div>Robotics, ROS, 3D visualizer, Sensors, Physics, Transportation</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>Yes</div></td>
       <td><div>Gazebo is an open-source 2D/3D robotics simulator that began development in 2002. In 2017, development forked into two versions, known as "Gazebo", the original monolithic architecture, and "Ignition", which had moved to becoming a modernized collection of loosely coupled libraries.</div></td>
     </tr>
     <tr>
@@ -907,7 +868,6 @@
       <td><div>Game Engine, 2D, 3D</div></td>
       <td><div>Game</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Develop your 2D & 3D games, cross-platform projects, or even XR ideas</div></td>
     </tr>
     <tr>
@@ -915,7 +875,6 @@
       <td><div>Engine</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>GT-POWER is used to predict engine performance quantities such as power, torque, airflow, volumetric efficiency, fuel consumption, turbocharger performance and matching, and pumping losses, to name just a few.</div></td>
     </tr>
     <tr>
@@ -923,7 +882,6 @@
       <td><div>CAE, Integrated Multi-physics Systems Simulation, Fluids, Electric, Thermal, Acoustics, Mechanical, Controls</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Offers engineers functionalities ranging from fast concept design to detailed system or sub-system/component analyses, design optimization, and root cause investigation.</div></td>
     </tr>
     <tr>
@@ -931,7 +889,6 @@
       <td><div>Game Engine, 2D</div></td>
       <td><div>Game</div></td>
       <td><div>Desktop</div></td>
-      <td><div>Yes</div></td>
       <td><div>HaxeFlixel is a 2D Game Engine that lets you create cross-platform games easier with free, open source technology</div></td>
     </tr>
     <tr>
@@ -939,7 +896,6 @@
       <td><div>CAE, Optimization</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>HEEDS facilitates efficient exploration and optimization of design options and parameters within the design space, enabling engineers to achieve superior results with greater ease and effectiveness.</div></td>
     </tr>
     <tr>
@@ -947,7 +903,6 @@
       <td><div>HiL, AD, ADAS</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Applied Intuition HIL Sim empowers ADAS and AD engineers to test and validate their hardware platforms and features. It shortens development and verification workflows</div></td>
     </tr>
     <tr>
@@ -955,7 +910,6 @@
       <td><div>CAE, FEM</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Altair® HyperMesh® is a powerful simulation solution that redefines CAE design processes across industries with unmatched pre- and post-processing capabilities for finite element modeling. Powered by AI-augmented 3D modeling and visualization tools, next-gen design and optimization workflows</div></td>
     </tr>
     <tr>
@@ -963,7 +917,6 @@
       <td><div>CAE, Design Exploration and Optimization</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>HyperStudy is a multidisciplinary design study software that enables engineers to explore and optimize their product performance and robustness.</div></td>
     </tr>
     <tr>
@@ -971,7 +924,6 @@
       <td><div>CAE, Structures, Motion, Fluids, Thermal, Electromagnetics</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>The Altair HyperWorks platform empowers engineers, scientists, designers, and more to tackle physics simulation and concept design challenges across multiple disciplines for structures, motion, fluids, thermal, electromagnetics, electronics, controls, and embedded systems</div></td>
     </tr>
     <tr>
@@ -979,7 +931,6 @@
       <td><div>CAE, CFD, Fluids</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>CFD++ is a computational fluid dynamics (CFD) software developed by Metacomp Technologies. It is a versatile and powerful tool used for simulating fluid flow, heat transfer, and related physical phenomena.</div></td>
     </tr>
     <tr>
@@ -987,15 +938,27 @@
       <td><div>CAE, Optimization</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Isight and the SIMULIA Execution Engine (formerly Fiper) integrate multiple cross-disciplinary models and applications within a simulation process flow. They automate the execution across distributed compute resources, explore the resulting design space, and identify the optimal design parameters within defined constraints.</div></td>
+    </tr>
+    <tr>
+      <td><div><a href="https://ivex.ai/openscenario-xml-exporter/" target="_blank">IVEX OpenScenario XML Exporter</a></div></td>
+      <td><div>OpenScenario, OpenDRIVE, Scenario Based, Digital Twin</div></td>
+      <td><div>Engineer.</div></td>
+      <td><div>Desktop</div></td>
+      <td><div>Automatically generate OpenScenario XML and OpenDrive files from raw data</div></td>
+    </tr>
+    <tr>
+      <td><div><a href="https://ivex.ai/hamilton-scenario-mining-tool/" target="_blank">IVEX Scenario Mining Tool</a></div></td>
+      <td><div>AD, ADAS, Scenario Based, Scenario Mining</div></td>
+      <td><div>Engineer.</div></td>
+      <td><div>Desktop</div></td>
+      <td><div>Automatically extract, inspect and evaluate concrete driving scenarios existing in your large amounts of recorded or simulated data</div></td>
     </tr>
     <tr>
       <td><div><a href="https://www.jmag-international.com/" target="_blank">JMAG</a></div></td>
       <td><div>Motor, Thermal, Electromagnetics</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Used for electromagnetic field analysis and simulation, particularly in the design and analysis of electric machines, transformers, actuators, and other electromagnetic devices.</div></td>
     </tr>
     <tr>
@@ -1003,7 +966,6 @@
       <td><div>Motor, Gears, Thermal, Electromagnetics</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>KISSsoft® is a modular calculation program for the design, optimization and verification of machine elements according to international standards.</div></td>
     </tr>
     <tr>
@@ -1011,15 +973,13 @@
       <td><div>Thermal, Vehicle heating</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>​​​​​​​​​​​Thermal management simulation is essential in the development process of every new vehicle. Understanding how individual components influence the overall system is necessary for an optimal design regarding energy consumption, emissions, noise, fatigue, and other parameters.</div></td>
     </tr>
     <tr>
       <td><div><a href="https://libgdx.com/" target="_blank">LibGDX</a></div></td>
       <td><div>Game Engine, 2D, 3D</div></td>
       <td><div>Game</div></td>
-      <td><div>Github</div></td>
-      <td><div>Yes</div></td>
+      <td><div>OSS (GitHub)</div></td>
       <td><div>libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.</div></td>
     </tr>
     <tr>
@@ -1027,7 +987,6 @@
       <td><div>Metal Casting Simulation</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>MAGMASOFT leads to robust and cost effective solutions in component design, tooling lay-out and production.</div></td>
     </tr>
     <tr>
@@ -1035,7 +994,6 @@
       <td><div>Modelica, Multidomain, MBD, Dynamics, Flow, Powertrain, Electic, PLC, Digital Twin,</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>MapleSim is an advanced modeling and simulation tool that helps you reduce development time, lower costs, and diagnose real-world performance issues.</div></td>
     </tr>
     <tr>
@@ -1043,15 +1001,13 @@
       <td><div>Simulink, MBD, Real-Time, SIL, Physics, Signals, Thermal, Noise, Vibration, Dynamics, Mechanical, Code Generation, AI, ML, Math</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>MATLAB® is a programming platform designed specifically for engineers and scientists to analyze and design systems and products that transform our world. The heart of MATLAB is the MATLAB language, a matrix-based language allowing the most natural expression of computational mathematics.</div></td>
     </tr>
     <tr>
-      <td><div><a href="https://matsim.org/" target="_blank">MatSim</a></div></td>
+      <td><div><a href="https://matsim.org/" target="_blank">MATSim</a></div></td>
       <td><div>Agent-Based Traffic Simulation</div></td>
       <td><div>Engineer.</div></td>
-      <td><div>Desktop, Github</div></td>
-      <td><div>Yes</div></td>
+      <td><div>OSS (GitHub), Desktop</div></td>
       <td><div>MATSim is an open-source framework for large-scale agent-based transport simulations.</div></td>
     </tr>
     <tr>
@@ -1059,15 +1015,13 @@
       <td><div>Road Generation, OpenDRIVE, Maps</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Convert or join different Maps, Road Networks and Georeferenced data.The Road Network Transpiler converts between different formats, in order to satisfy customer modeling and simulation needs.Transform your road network data with ease using the Road Network Transpiler. Our powerful tool enables quick and seamless conversion between various formats, catering to your unique modeling and simulation needs. With just a few clicks, our software can convert data from HERE HD Live Maps® to ASAM OpenDRIVE® and produce files that are ready for use in simulations or procedural environment generation.</div></td>
     </tr>
     <tr>
       <td><div><a href="https://www.mbdyn.org/" target="_blank">MBDyn</a></div></td>
       <td><div>Multidomain, Mechanical, aeroservoelastic, Co-simulation, Multiphysics, CFD, Simulink, API(C, C++ Python), Aerospace</div></td>
       <td><div>Engineer.</div></td>
-      <td><div>Desktop, Github</div></td>
-      <td><div>No</div></td>
+      <td><div>OSS (GitHub), Desktop</div></td>
       <td><div>MBDyn is the first and one of the few full-featured free* general purpose Multibody Dynamics analysis software, released under GNU’s GPL 2.1</div></td>
     </tr>
     <tr>
@@ -1075,7 +1029,6 @@
       <td><div>Multidomain, Physics, Math</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Language</div></td>
-      <td><div>Yes</div></td>
       <td><div>Modelica is an object oriented language to model cyber-physical systems. It supports acausal connection of reusable components governed by mathematical equations to facilitate modeling from first principles.</div></td>
     </tr>
     <tr>
@@ -1083,7 +1036,6 @@
       <td><div>Multidomain, Physics, Math, Modelica, Cloud</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>A next generation system modeling and simulation platform, leveraging the benefits of web and open standard technologies. With openness at its core, Modelon Impact supports standards such as Modelica, FMI, Python and REST. The user-friendly browser interface provides modeling experts the tools they need to create, simulate, and experiment. Steady-state or dynamic solutions</div></td>
     </tr>
     <tr>
@@ -1091,15 +1043,13 @@
       <td><div>Multidomain, Physics, Math, Modelica, Vehicle Dynamics, Powertrain, Electrification, Engine Dynamics, Fuel Cell, Hydrolics, Hydro, Jet Propulsion, Themal</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>A comprehensive suite of Modelica libraries expertly designed for your physical system modeling needs.</div></td>
     </tr>
     <tr>
       <td><div><a href="https://monogame.net/" target="_blank">MonoGame</a></div></td>
-      <td><div>Game Development, 2D, 3D</div></td>
+      <td><div>Game Development, 2D, 3D, Desktop, Mobile, Console</div></td>
       <td><div>Game</div></td>
-      <td><div>Desktop, Mobile, Console</div></td>
-      <td><div>Yes</div></td>
+      <td><div>OSS (GitHub)</div></td>
       <td><div>MonoGame is a simple and powerful .NET framework for creating games for desktop PCs, video game consoles, and mobile devices using the C# programming language.</div></td>
     </tr>
     <tr>
@@ -1107,343 +1057,195 @@
       <td><div>Robotics, ROS, YARP, 3D visualizer, Sensors, Physics, Transportation</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>Yes</div></td>
       <td><div>As of 2020, MORSE is not maintained/updated anymore. MORSE is an generic simulator for academic robotics. It focuses on realistic simulation of small to large environments, indoor or outdoor, with one to over a dozen of autonomous robots.</div></td>
     </tr>
     <tr>
-      <td><div><a href="https://altair.com/motionsolve" target="_blank">Altair MotionSolve</a></div></td>
-      <td><div>Multibody System Simulation, Discrete Element Modelling, Nonlinear Flexbodies, CFD Coupling, Controls Integration, Signal processing.</div></td>
+      <td><div><a href="https://en.wikipedia.org/wiki/Nastran" target="_blank">Nastran</a></div></td>
+      <td><div>CAE, FEA</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div>MotionSolve is a comprehensive multibody simulation software that helps you easily build and execute complex system models to evaluate the dynamic response of products and optimize their performance.</div></td>
+      <td><div>Commercial versions of NASTRAN are currently available from several vendors.</div></td>
     </tr>
     <tr>
-      <td><div><a href="https://www.esi-group.com/products/simulationx" target="_blank">SimulationX - Multi-Body Systems (MBS-X)</a></div></td>
-      <td><div>Modelica, Multidomain, Multi-Body Systems, MBD, Dynamics, Digital Twin</div></td>
+      <td><div><a href="https://www.ansys.com/products/structures/ansys-ncode-designlife" target="_blank">nCode DesignLife</a></div></td>
+      <td><div>CAE, Fatigue analysis</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div>With SimulationX, engineers model, simulate, and analyze the behavior of all parts of the technical systems comprising mechanical, hydraulics, pneumatics, electronics, thermal, and control systems. Comprehensive component libraries with application-oriented model elements ensure that they have the right tools available for each task.</div></td>
+      <td><div>Ansys nCode DesignLife, the industry-leading tool for durability analysis, gives you a comprehensive diagnostic fatigue process to predict your product’s operational lifetime.</div></td>
     </tr>
     <tr>
-      <td><div>Multi-Disciplinary Optimization (MDO)</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://ccl.northwestern.edu/netlogo/models/TrafficBasic" target="_blank">NetLogo Traffic Simulation</a></div></td>
+      <td><div>Traffic</div></td>
       <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>Desktop, Web</div></td>
+      <td><div>Models the movement of cars on a highway.</div></td>
     </tr>
     <tr>
-      <td><div>Multi-Physics Simulation (MPS)</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://nextsimproject.eu/" target="_blank">NextSim</a></div></td>
+      <td><div>CFD, Aeronautical</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>Multi-Physics System Simulation</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>Multibody Dynamics Simulation (MBDS)</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>MultiMech</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>Nastran</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>nCode DesignLife</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>NetLogo Traffic Simulation</div></td>
-      <td><div></div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>NextSim</div></td>
-      <td><div></div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>NOVA CFD</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>NUMECA</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>NextSim aims to increase the capabilities of current Computational Fluid Dynamics tools for aeronautical design by re-engineering them for extreme-scale parallel computing platforms.</div></td>
     </tr>
     <tr>
       <td><div><a href="https://o3de.org/" target="_blank">O3DE</a></div></td>
       <td><div>Game Engine, 2D, 3D</div></td>
       <td><div>Engineer./Game</div></td>
-      <td><div>Github</div></td>
-      <td><div>Yes</div></td>
+      <td><div>OSS (GitHub)</div></td>
       <td><div>O3DE (Open 3D Engine) is an open-source, real-time, multi-platform 3D engine that enables developers and content creators to build AAA games, cinema-quality 3D worlds, and high-fidelity simulations without any fees or commercial obligations.</div></td>
     </tr>
     <tr>
-      <td><div>Open Source Autonomous Driving (OpenAD)</div></td>
-      <td><div></div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>Yes</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>OpenDS</div></td>
-      <td><div></div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>OpenDSG</div></td>
-      <td><div></div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>Yes</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>OpenFOAM</div></td>
+      <td><div><a href="https://www.openfoam.com/" target="_blank">OpenFOAM</a></div></td>
       <td><div>Aerodynamics</div></td>
       <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>Yes</div></td>
-      <td><div></div></td>
+      <td><div>OSS (GitHub), Desktop</div></td>
+      <td><div>OpenFOAM is the free, open source CFD software developed primarily by OpenCFD Ltd since 2004. It has a large user base across most areas of engineering and science, from both commercial and academic organisations.</div></td>
     </tr>
     <tr>
-      <td><div>OpenModelica</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://openmodelica.org/" target="_blank">OpenModelica</a></div></td>
+      <td><div>Multidomain, Physics, Math, Modelica</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>OPENMODELICA is an open-source Modelica-based1 modeling and simulation environment intended for industrial and academic usage.</div></td>
     </tr>
     <tr>
-      <td><div>OpenStreetMap for Traffic Simulation</div></td>
-      <td><div></div></td>
+      <td><div><a href="https://github.com/opentraffic" target="_blank">OpenTraffic</a></div></td>
+      <td><div>Traffic, OpenStreetMap</div></td>
+      <td><div>Engineer.</div></td>
+      <td><div>OSS (GitHub</div></td>
+      <td><div>A free, global traffic speed data set linked to OpenStreetMap</div></td>
+    </tr>
+    <tr>
+      <td><div><a href="https://github.com/averbraeck/opentrafficsim" target="_blank">OpenTrafficSim</a></div></td>
+      <td><div>Traffic, OpenStreetMap</div></td>
+      <td><div>Engineer.</div></td>
+      <td><div>OSS (GitHub</div></td>
+      <td><div>Open source traffic simulator</div></td>
+    </tr>
+    <tr>
+      <td><div><a href="https://optimumg.com/product/optimumkinematics/" target="_blank">OptimumKinematics</a></div></td>
+      <td><div>Kinematics, Suspension</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>Yes</div></td>
-      <td><div></div></td>
+      <td><div>Software that makes computer-aided suspension design and analysis fast and convenient.</div></td>
     </tr>
     <tr>
-      <td><div>OpenTraffic</div></td>
-      <td><div></div></td>
+      <td><div><a href="https://optimumg.com/product/optimumlap/" target="_blank">OptimumLap</a></div></td>
+      <td><div>Vehicle Dynamics, Lap Time Optimization</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>OptimumLap is a FREE, simplified, vehicle simulation tool that estimates a vehicle’s performance on a given racetrack.</div></td>
     </tr>
     <tr>
-      <td><div>OpenTrafficSim</div></td>
-      <td><div></div></td>
+      <td><div><a href="https://optimumg.com/software/optimumtire2/" target="_blank">OptimumTire2</a></div></td>
+      <td><div>Tires</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>OptimumTire2 is a software tool that is designed to help engineers to analyze tire forces and moments and generate tire models from tire test data.</div></td>
     </tr>
     <tr>
-      <td><div>OptimumG</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://altair.com/optistruct" target="_blank">Optistruct</a></div></td>
+      <td><div>CAE, FEA, FEM, Nastran</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>OptiStruct is a proven, modern structural solver with comprehensive, accurate, and scalable solutions for linear and nonlinear analyses across statics and dynamics, vibrations, acoustics, fatigue, heat transfer, and multiphysics disciplines.</div></td>
     </tr>
     <tr>
-      <td><div>Optistruct</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://github.com/bmetrafficlab/OSM2VISSIM" target="_blank">OSM2VISSIM</a></div></td>
+      <td><div>Traffic, VISSIM, Openstreetmap</div></td>
       <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>OSS (GitHub</div></td>
+      <td><div>An open-source OSM conversion tool for seamless automatized generation of microscopic traffic simulation for PTV VISSIM</div></td>
     </tr>
     <tr>
-      <td><div>OSMWebWizard</div></td>
-      <td><div></div></td>
+      <td><div><a href="https://sumo.dlr.de/docs/Tutorials/OSMWebWizard.html" target="_blank">OSMWebWizard</a></div></td>
+      <td><div>Traffic, SUMO, Openstreetmap</div></td>
       <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>OSS (GitHub</div></td>
+      <td><div>The OSM Web Wizard offers one of the easiest solutions to start with SUMO. Based on a selection of an openstreetmap map excerpt, you will be able to configure a randomized traffic demand and run and visualize the scenario in the sumo-gui.</div></td>
     </tr>
     <tr>
-      <td><div>OSV (Open Source VISSIM)</div></td>
-      <td><div></div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>Yes</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>PAM-CRASH</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>PAM-STAMP</div></td>
-      <td><div>-</div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>Panda3D</div></td>
-      <td><div></div></td>
+      <td><div><a href="https://www.panda3d.org/" target="_blank">Panda3D</a></div></td>
+      <td><div>Game Engine, 3D, C++, Python</div></td>
       <td><div>Game</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>Panda3D is an open-source, cross-platform, completely free-to-use engine for realtime 3D games, visualizations, simulations, experiments — you name it!</div></td>
     </tr>
     <tr>
-      <td><div>Permas</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://www.intes.de/k_permas/overview" target="_blank">Permas</a></div></td>
+      <td><div>CAE, Finite Element, Thermal, Hear, Acoustics, Fluid, Dynamics</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>Phaser</div></td>
-      <td><div></div></td>
-      <td><div>Game</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>PERMAS is among the most advanced Finite Element Software Systems worldwide. It offers a complete range of industrial solutions at the highest possible performance, quality and reliability. Solutions for statics, dynamics, heat transfer, fluid-structure acoustics and optimization.</div></td>
     </tr>
     <tr>
       <td><div><a href="https://developer.nvidia.com/physx-sdk" target="_blank">PhysX</a></div></td>
-      <td><div>-</div></td>
+      <td><div>Physics Simulation, GPU</div></td>
       <td><div>Engineer. / Game</div></td>
-      <td><div>Github, SDK</div></td>
-      <td><div>Yes</div></td>
+      <td><div>OSS (GitHub, SDK</div></td>
       <td><div>NVIDIA PhysX® is an open source, scalable, multi-platform physics simulation solution supporting a wide range of devices, from smartphones to high-end multicore CPUs and GPUs. The powerful SDK brings high-performance and precision accuracy to industrial simulation use cases from traditional VFX and game development workflows, to high-fidelity robotics, medical simulation, and scientific visualization applications.</div></td>
     </tr>
     <tr>
-      <td><div>PipeLay</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://plexe.car2x.org/" target="_blank">Plexe</a></div></td>
+      <td><div>Traffic, SUMO, Veins, Scenario Based, Vehicle Dynamics, Controls</div></td>
       <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>OSS (GitHub, Desktop</div></td>
+      <td><div>Plexe is a cooperative driving framework extending SUMO and Veins permitting the realistic simulation of platooning (i.e., automated car-following) systems.</div></td>
     </tr>
     <tr>
-      <td><div>PLASMA</div></td>
-      <td><div></div></td>
+      <td><div><a href="https://www.3ds.com/products/simulia/powerflow/poweracoustics" target="_blank">PowerACOUSTICS </a></div></td>
+      <td><div>CAE, NVH, Vibration, Acoustics</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>Yes</div></td>
-      <td><div></div></td>
-    </tr>
-    <tr>
-      <td><div>Plexe</div></td>
-      <td><div></div></td>
-      <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>Yes</div></td>
-      <td><div></div></td>
+      <td><div>PowerACOUSTICS® is the leader in digital acoustic and aeroacoustic solutions for applications including cars, heavy equipment, trains, and aircraft. When coupled with PowerFLOW, PowerACOUSTICS provides visual insight into acoustic and aeroacoustic capabilities through extensive noise-quality testing.</div></td>
     </tr>
     <tr>
       <td><div><a href="https://www.3ds.com/products/simulia/powerflow" target="_blank">PowerFLOW</a></div></td>
       <td><div>CAE, CFD, Flow, Liquids</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Transient Lattice Boltzmann-based physics PowerFLOW CFD solution performs simulations that accurately predict real world conditions. Using the PowerFLOW suite, engineers evaluate product performance early in the design process</div></td>
     </tr>
     <tr>
-      <td><div>PowerFLOW</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://www.3ds.com/products/simulia/powerflow/powertherm" target="_blank">PowerTHERM</a></div></td>
+      <td><div>CAE, Thermal, Cooling</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>PowerTHERM and PowerCOOL - A Complete Thermal Management Solution</div></td>
     </tr>
     <tr>
-      <td><div>PreScan</div></td>
-      <td><div></div></td>
+      <td><div><a href="https://plm.sw.siemens.com/en-US/simcenter/autonomous-vehicle-solutions/prescan/" target="_blank">PreScan</a></div></td>
+      <td><div>ADAS, AD, Physics-based Sensor Simulation, Camera, Radar, 3D Visualization</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>Yes</div></td>
-      <td><div></div></td>
+      <td><div>ADAS simulation with Simcenter Prescan enables the development and validation of ADAS and automated vehicle functionality.</div></td>
     </tr>
     <tr>
-      <td><div>PTV Vissim</div></td>
-      <td><div></div></td>
+      <td><div><a href="https://www.ptvgroup.com/en/products/ptv-vissim" target="_blank">PTV Vissim</a></div></td>
+      <td><div>Traffic, Maps, 3D Visualization, Pedestrians, Transport Infrastructure, Rail, Bicycles</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>The world's leading traffic simulation software PTV Vissim digitally reproduces the traffic patterns of all road users on a microscopic scale.</div></td>
     </tr>
     <tr>
-      <td><div>Python-Road-Traffic-Simulation</div></td>
-      <td><div></div></td>
+      <td><div><a href="https://github.com/BilHim/trafficSimulator" target="_blank">trafficSimulator</a></div></td>
+      <td><div>Traffic, Python</div></td>
       <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>Yes</div></td>
-      <td><div></div></td>
+      <td><div>OSS (GitHub</div></td>
+      <td><div>A microscopic traffic simulator in Python.</div></td>
     </tr>
     <tr>
-      <td><div>RecurDyn</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://functionbay.com/en/page/single/2/recurdyn-overview" target="_blank">RecurDyn</a></div></td>
+      <td><div>CAE, Multi-Body Dynamics</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div></div></td>
+      <td><div>RecurDyn is an interdisciplinary, CAE software package whose primary function is the simulation of Multi-Body Dynamics (MBD)</div></td>
     </tr>
     <tr>
       <td><div>rFpro</div></td>
       <td><div>-</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1451,7 +1253,6 @@
       <td><div>-</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1459,7 +1260,6 @@
       <td><div>-</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1467,7 +1267,6 @@
       <td><div>-</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1475,7 +1274,6 @@
       <td><div>-</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1483,7 +1281,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1491,7 +1288,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1499,7 +1295,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1507,7 +1302,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>Yes</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1515,7 +1309,6 @@
       <td><div>-</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1523,7 +1316,6 @@
       <td><div>-</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1531,7 +1323,6 @@
       <td><div></div></td>
       <td><div>Game</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1539,7 +1330,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1547,7 +1337,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1555,7 +1344,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1563,7 +1351,6 @@
       <td><div>CAE</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1571,7 +1358,6 @@
       <td><div>CAE, Electrical, Fluid, Thermal</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Simcenter Amesim is a leading integrated, scalable system simulation platform, allowing system simulation engineers to virtually assess and optimize the performance of mechatronic systems.</div></td>
     </tr>
     <tr>
@@ -1579,7 +1365,6 @@
       <td><div>CAE</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1587,7 +1372,6 @@
       <td><div>CAE</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1595,7 +1379,6 @@
       <td><div>CAE, Fatigue analysis</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Simcenter durability simulation software gives you access to state-of-the art fatigue analysis methods that enable you to perform analyses quickly and accurately.</div></td>
     </tr>
     <tr>
@@ -1603,7 +1386,6 @@
       <td><div>Occupant & Pedestrian Safety, Crash</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1611,7 +1393,6 @@
       <td><div>-</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>Reduce new or improved vehicle development time and cost through early analysis and optimization of occupant and pedestrian safety.</div></td>
     </tr>
     <tr>
@@ -1619,7 +1400,6 @@
       <td><div>CAE</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1627,7 +1407,6 @@
       <td><div>CAE</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1635,7 +1414,6 @@
       <td><div>CAE</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1643,7 +1421,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1651,7 +1428,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1659,7 +1435,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1667,7 +1442,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>Yes</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1675,23 +1449,20 @@
       <td><div>Modelica, Multidomain, MBD, Dynamics, Flow, Powertrain, Electic, PLC, Digital Twin</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>A powerful platform for simulating and analyzing physics-based models of complex systems. With flexible modeling capabilities and tight integrations with ANSYS solutions for 3-D physics simulation and embedded software design, Simplorer provides broad support for assembling system-level physical models and robust simulation for verifying and optimizing system performance. Simplorer supports multiple standard modeling languages and exchange formats, including Modelica, VHDL-AMS, and the Functional Mock-up Interface, and is compatible with Modelica libraries offered by Modelon.</div></td>
     </tr>
     <tr>
-      <td><div>SIMULIA</div></td>
-      <td><div>-</div></td>
+      <td><div><a href="https://www.esi-group.com/products/simulationx" target="_blank">SimulationX - Multi-Body Systems (MBS-X)</a></div></td>
+      <td><div>Modelica, Multidomain, Multi-Body Systems, MBD, Dynamics, Digital Twin</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
-      <td><div>Dassault Systemes</div></td>
+      <td><div>With SimulationX, engineers model, simulate, and analyze the behavior of all parts of the technical systems comprising mechanical, hydraulics, pneumatics, electronics, thermal, and control systems. Comprehensive component libraries with application-oriented model elements ensure that they have the right tools available for each task.</div></td>
     </tr>
     <tr>
       <td><div>Simulink Vehicle Dynamics Blockset</div></td>
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1699,7 +1470,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1707,7 +1477,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1715,7 +1484,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>Yes</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1723,7 +1491,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1731,7 +1498,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1739,7 +1505,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1747,7 +1512,6 @@
       <td><div></div></td>
       <td><div>Game</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1755,15 +1519,13 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>Yes</div></td>
       <td><div></div></td>
     </tr>
     <tr>
       <td><div><a href="https://github.com/eclipse-sumo/sumo" target="_blank">SUMO (Simulation of Urban MObility)</a></div></td>
       <td><div></div></td>
       <td><div>Engineer.</div></td>
-      <td><div>Github, Desktop</div></td>
-      <td><div>Yes</div></td>
+      <td><div>OSS (GitHub, Desktop</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1771,7 +1533,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1779,7 +1540,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1787,7 +1547,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1795,7 +1554,6 @@
       <td><div>Suspension</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>SuspensionSim is used by model users and model builders. Model users are engineers and designers who work with a given suspension layout, change hardpoint coordinates and stiffness properties, and then evaluate the suspension behavior by analyzing simulated test results.</div></td>
     </tr>
     <tr>
@@ -1803,7 +1561,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1811,7 +1568,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>Yes</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1819,15 +1575,20 @@
       <td><div></div></td>
       <td><div>Game</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
+    </tr>
+    <tr>
+      <td><div><a href="https://www.3ds.com/products/simulia/tosca" target="_blank">Tosca</a></div></td>
+      <td><div>CAE, FEA, CFD, Optimization</div></td>
+      <td><div>Engineer.</div></td>
+      <td><div>Desktop</div></td>
+      <td><div>Efficient Optimization Based on FEA and CFD Simulations</div></td>
     </tr>
     <tr>
       <td><div>TRACI (Traffic Control Interface)</div></td>
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1835,7 +1596,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1843,7 +1603,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1851,15 +1610,13 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
       <td><div><a href="https://github.com/udacity/self-driving-car-sim" target="_blank">Udacity</a></div></td>
       <td><div>Deep Learning, AD, ADAS</div></td>
       <td><div>Engineer.</div></td>
-      <td><div>Github</div></td>
-      <td><div>Yes</div></td>
+      <td><div>OSS (GitHub</div></td>
       <td><div>This simulator was built for Udacity's Self-Driving Car Nanodegree, to teach students how to train cars how to navigate road courses using deep learning</div></td>
     </tr>
     <tr>
@@ -1867,7 +1624,6 @@
       <td><div></div></td>
       <td><div>Game/Engineering</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1875,31 +1631,34 @@
       <td><div></div></td>
       <td><div>Game/Engineering</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
+    </tr>
+    <tr>
+      <td><div><a href="https://www.esi-group.com/products/va-one" target="_blank">VA ONE</a></div></td>
+      <td><div>NVH, Acoustics, Vibration</div></td>
+      <td><div>Engineer.</div></td>
+      <td><div>Desktop</div></td>
+      <td><div>Software for Vibro-Acoustics Analysis & Simulation</div></td>
     </tr>
     <tr>
       <td><div>VehicleSim Dynamics</div></td>
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
-      <td><div>Veins</div></td>
-      <td><div></div></td>
+      <td><div><a href="http://veins.car2x.org/" target="_blank">Veins</a></div></td>
+      <td><div>Inter Vehicle Communication, SUMO, Traffic</div></td>
       <td><div>Engineer.</div></td>
-      <td><div>Desktop</div></td>
-      <td><div>Yes</div></td>
-      <td><div></div></td>
+      <td><div>OSS (GitHub, Desktop</div></td>
+      <td><div>Veins is an open source framework for running vehicular network simulations. It is based on two well-established simulators: OMNeT++, an event-based network simulator, and SUMO, a road traffic simulator. It extends these to offer a comprehensive suite of models for IVC simulation.</div></td>
     </tr>
     <tr>
       <td><div><a href="https://www.vi-grade.com/en/products/vi-carrealtime/" target="_blank">VI-CarRealTime</a></div></td>
       <td><div>Vehicle Dynamics, Design of Experiments, Real time, Suspension, K&C, ADAS, MATLAB, FMI</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>With VI-CarRealTime, Vehicle Dynamics engineers can quickly and easily perform large Design of Experiments (DOE) and multi-objective optimization studies.</div></td>
     </tr>
     <tr>
@@ -1907,7 +1666,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1915,15 +1673,20 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
+    </tr>
+    <tr>
+      <td><div><a href="https://www.esi-group.com/products/virtual-performance-solution" target="_blank">VIRTUAL PERFORMANCE SOLUTION (VPS)</a></div></td>
+      <td><div>Crash, Safety, Impact, Airbag, Battery, Strength & Dynamics, Seat Design</div></td>
+      <td><div>Engineer.</div></td>
+      <td><div>Desktop</div></td>
+      <td><div>Use ESI's VIRTUAL PERFORMANCE SOLUTION VPS software to simulate crash, safety, strength, and dynamics of next-generation vehicles.</div></td>
     </tr>
     <tr>
       <td><div><a href="https://hexagon.com/products/virtual-test-drive" target="_blank">Virtual Test Drive</a></div></td>
       <td><div>Environment, OpenDRIVE, OpenSCENARIO, ADAS, AD, SiL, DiL, ViL, HiL,</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>VTD is a toolkit for the creation, configuration, presentation and evaluation of virtual environments in the scope of road and rail based simulations. It is used for the development of ADAS and automated driving systems as well as the core for training simulators. It covers the full range from the generation of 3d content to the simulation of complex traffic scenarios and, finally, to the simulation of either simplified or physically driven sensors.</div></td>
     </tr>
     <tr>
@@ -1931,7 +1694,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
@@ -1939,15 +1701,13 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
     <tr>
       <td><div><a href="https://www.ptvgroup.com/en/products/ptv-vissim" target="_blank">Vissim</a></div></td>
-      <td><div>Traffic, Maps, Digital City Twin</div></td>
+      <td><div>Traffic, Maps, Digital City Twin, OpenStreetMap</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>traffic simulation software PTV Vissim digitally reproduces the traffic patterns of all road users on a microscopic scale.</div></td>
     </tr>
     <tr>
@@ -1955,7 +1715,6 @@
       <td><div>Modelica, Multidomain, MBD, Dynamics, Flow, Powertrain, Electic, PLC, Digital Twin,</div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div>A high-fidelity modeling environment that uses versatile symbolic components and computation to drive design efficiency and innovation. It integrates with the Wolfram technology platform to enable modeling, simulation, and analysis (of many types).</div></td>
     </tr>
     <tr>
@@ -1963,7 +1722,6 @@
       <td><div></div></td>
       <td><div>Engineer.</div></td>
       <td><div>Desktop</div></td>
-      <td><div>No</div></td>
       <td><div></div></td>
     </tr>
   </tbody>

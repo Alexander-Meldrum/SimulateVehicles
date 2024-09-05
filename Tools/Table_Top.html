@@ -60,16 +60,16 @@
         :root {
             --colum_1_percentage: 13svw;
             --colum_2_percentage: 20svw;
-            --colum_3_percentage: 8svw;
-            --colum_4_percentage: 8svw;
-            --colum_5_percentage: 4svw;
-            --colum_6_percentage: 28svw;
+            --colum_3_percentage: 6svw;
+            --colum_4_percentage: 7svw;
+            --colum_5_percentage: 28svw;
+            /* --colum_6_percentage: 28svw; */
             --colum_1_min_em: 13em;
             --colum_2_min_em: 20em;
-            --colum_3_min_em: 8em;
-            --colum_4_min_em: 8em;
-            --colum_5_min_em: 4em;
-            --colum_6_min_em: 28em;
+            --colum_3_min_em: 6em;
+            --colum_4_min_em: 7em;
+            --colum_5_min_em: 28em;
+            /* --colum_6_min_em: 28em; */
         }
 
         th:nth-child(1), td:nth-child(1) {
@@ -93,12 +93,12 @@
             min-width: max(var(--colum_5_min_em), var(--colum_5_percentage));
             max-width: max(var(--colum_5_min_em), var(--colum_5_percentage));
 		}
-        th:nth-child(6), td:nth-child(6) {
+        /* th:nth-child(6), td:nth-child(6) {
             min-width: max(var(--colum_6_min_em), var(--colum_6_percentage));
             max-width: max(var(--colum_6_min_em), var(--colum_6_percentage));
-		}
+		} */
 
-        td:nth-child(6) {
+        td:nth-child(5) {
              /* Make description column lighter color unless hovered. */
             color: lightgrey;
 		}
@@ -143,7 +143,7 @@
 			var tr, td, i, j, s, break_feature_loop;
 			var nr_of_selects_in_features = 0;
             var features_column_nr = 2;
-            var nr_of_table_columns = 6;
+            var nr_of_table_columns = 5;
             
 
             select_input_array = document.getElementsByTagName("select");
@@ -229,7 +229,7 @@
                         
                     }
                     // Else check each column with dropdown select
-                    else if (j == 2 || j == 3 || j == 4){
+                    else if (j == 2 || j == 3){
                         // console.log("Debug6");
                         // console.log("select_array[j + nr_of_selects_in_features - 2");
                         // console.log(select_array[j + nr_of_selects_in_features - features_column_nr]);

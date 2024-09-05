@@ -13,14 +13,16 @@ df = pd.read_csv('Tools_Data.csv')
 df['Tool'] = np.where(df['Link'].isna(), df['Tool'], '<a href="' + df['Link'] + '"' + ' target="_blank">'+ df['Tool']+ '</a>')
 #print(df)
 
-html_string = df.to_html(header=False, index=False, na_rep="", escape=False, columns=['Tool', 'Features','Game/Engineering','Format','Open Source', 'Description'])
+html_string = df.to_html(header=False, index=False, na_rep="", escape=False, columns=['Tool', 'Features','Game/Engineering','Format', 'Description'])
 
 # replace new line with white space instead of <br>
 html_string = html_string.replace('\\n',' ')
 #print("The html string is:")
 #print(html_string)
 
-#Add <div> for collapsible rows
+# TODO, Filter by "Automotive" or "Aero"
+
+# Add <div> for collapsible rows
 html_string = html_string.replace('<td>','<td><div>')
 html_string = html_string.replace('</td>','</div></td>')
 
